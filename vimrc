@@ -52,7 +52,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/tomorrow-theme' 
 " tagbar
 Plugin 'majutsushi/tagbar'
-
+" multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -60,9 +61,8 @@ filetype plugin indent on    " required
 
 
 "================"
-"" Color Settings "
-" ==============="
-" \
+" Color Settings "
+"================"
 
 set t_Co=256
 
