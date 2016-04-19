@@ -4,6 +4,8 @@ filetype on "File type
 filetype plugin on
 
 set nocompatible " disable VI mode
+set nu "show line number
+set relativenumber  " show relative line number
 syntax on " open syntax highlight 
 set mouse=a  " Enable mouse
 set hlsearch " Highlight the search result
@@ -54,6 +56,10 @@ Plugin 'chriskempson/tomorrow-theme'
 Plugin 'majutsushi/tagbar'
 " multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
+" Fuzzy file buffer
+Plugin 'kien/ctrlp.vim'
+" hybrid line number mode
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
