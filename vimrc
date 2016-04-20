@@ -6,7 +6,6 @@ filetype plugin on
 set nocompatible " disable VI mode
 set nu "show line number
 set relativenumber  " show relative line number
-syntax on " open syntax highlight 
 set mouse=a  " Enable mouse
 set hlsearch " Highlight the search result
 set incsearch " Real-time search
@@ -24,7 +23,9 @@ set shiftwidth=4
 set softtabstop=4
 
 " airline
-let g:airline_theme="luna" 
+" let g:airline_theme="murmur" 
+" let g:airline_theme="jellybeans" 
+let g:airline_theme="dracula" 
 let g:airline_powerline_fonts = 1 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -60,10 +61,23 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kien/ctrlp.vim'
 " hybrid line number mode
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+" color theme
+Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+" language highlighting 
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'fatih/vim-go'
+Plugin 'plasticboy/vim-markdown'
+Bundle 'mxw/vim-jsx'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+"================"
+" JSX   Settings "
+"================"
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 1
 
 
 "================"
@@ -71,17 +85,8 @@ filetype plugin indent on    " required
 "================"
 
 set t_Co=256
+set background=dark
+syntax on " open syntax highlight 
+color dracula 
+set cursorline 
 
-try
-    set background=dark
-    colorscheme Tomorrow-Night-Bright
-catch /^Vim\%((\a\+)\)\=:E185/
-    colorscheme desert
-endtry
-
-" Highlight TODO/FIXME/XXX
-highlight myTODO cterm=bold term=bold ctermbg=yellow ctermfg=black
-match myTODO /\(TODO\|XXX\|FIXME\)/
-
-set cursorline
-hi search cterm=underline ctermfg=white
