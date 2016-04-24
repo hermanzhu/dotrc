@@ -3,24 +3,39 @@
 filetype on "File type 
 filetype plugin on
 
-set nocompatible " disable VI mode
-set nu "show line number
-set relativenumber  " show relative line number
-set mouse=a  " Enable mouse
-set hlsearch " Highlight the search result
-set incsearch " Real-time search
-set ignorecase " ignore letter
+" 设置文件编码和文件格
+set fenc=utf-8
 set encoding=utf-8
-" 自适应不同语言的智能缩进
-filetype indent on
-" 将制表符扩展为空格
-set expandtab
-" 设置编辑时制表符占用空格数
-set tabstop=4
-" 设置格式化时制表符占用空格数
-set shiftwidth=4
-" 让 vim 把连续数量的空格视为一个制表符
-set softtabstop=4
+set fileencodings=utf-8,gbk,cp936,latin-1
+set fileformat=unix
+set fileformats=unix,mac,dos
+set nocompatible " disable VI mode
+
+set relativenumber           " 开启相对行???
+set nu!                      " 显示行号
+set ruler                    " 右下角显示光标位置的状态行
+set incsearch                " 开启实时搜索功???
+set hlsearch                 " 开启高亮显示结???
+set ignorecase               " ignore letter
+set nowrapscan               " 搜索到文件两端时不重新搜???
+set nocompatible             " 关闭兼容模式
+set hidden                   " 允许在有未保存的修改时切换缓冲区
+set autochdir                " 设定文件浏览器目录为当前目录
+set fdm=syntax
+set foldenable               " 启用折叠
+set foldmethod=indent        " indent 折叠方式
+set foldlevel=100            " 禁止自动折叠
+
+set mouse=a  " Enable mouse
+set encoding=utf-8
+
+" set autowrite
+set conceallevel=0
+set autowriteall
+set backspace=2              " 设置退格键可用
+set autoindent               " 自动对齐
+set ai!                      " 设置自动缩进
+set smartindent              " 智能自动缩进
 
 " airline
 " let g:airline_theme="murmur" 
@@ -89,4 +104,7 @@ set background=dark
 syntax on " open syntax highlight 
 color dracula 
 set cursorline 
+
+" NERDTree
+map <F2> :NERDTreeToggle<CR>
 
