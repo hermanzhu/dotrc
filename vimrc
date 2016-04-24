@@ -3,6 +3,11 @@
 filetype on "File type 
 filetype plugin on
 
+
+" JSX   Settings 
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 1
+
 " 设置文件编码和文件格
 set fenc=utf-8
 set encoding=utf-8
@@ -11,7 +16,7 @@ set fileformat=unix
 set fileformats=unix,mac,dos
 set nocompatible " disable VI mode
 
-set relativenumber           " 开启相对行???
+set relativenumber           " 开启相对行
 set nu!                      " 显示行号
 set ruler                    " 右下角显示光标位置的状态行
 set incsearch                " 开启实时搜索功???
@@ -83,22 +88,16 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 Plugin 'plasticboy/vim-markdown'
-Bundle 'mxw/vim-jsx'
+Plugin 'mxw/vim-jsx'
+" syntastic
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-"================"
-" JSX   Settings "
-"================"
-let g:jsx_ext_required = 0
-let g:jsx_pragma_required = 1
 
 
-"================"
-" Color Settings "
-"================"
-
+" Color Settings 
 set t_Co=256
 set background=dark
 syntax on " open syntax highlight 
@@ -107,4 +106,4 @@ set cursorline
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
-
+imap <F2> <ESC> :NERDTreeToggle<CR>
