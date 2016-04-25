@@ -5,8 +5,8 @@ filetype plugin on
 
 
 " JSX   Settings 
-let g:jsx_ext_required = 0
-let g:jsx_pragma_required = 1
+let g:jsx_pragma_required = 1 
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 
 " 设置文件编码和文件格
 set fenc=utf-8
@@ -84,13 +84,17 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " color theme
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 " language highlighting 
-Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'mxw/vim-jsx'
 " syntastic
 Plugin 'scrooloose/syntastic'
+Plugin 'pangloss/vim-javascript', {'branch': 'develop'}
+Plugin 'marijnh/tern_for_vim', {'do': 'npm install'}
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'heavenshell/vim-jsdoc', {'for': ['javascript', 'jsx']}
+Plugin 'burnettk/vim-angular'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
