@@ -4,7 +4,7 @@ filetype on "File type
 filetype plugin on
 
 
-" JSX   Settings 
+" JSX Settings 
 let g:jsx_pragma_required = 1 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 
@@ -19,10 +19,10 @@ set nocompatible " disable VI mode
 set relativenumber           " 开启相对行
 set nu!                      " 显示行号
 set ruler                    " 右下角显示光标位置的状态行
-set incsearch                " 开启实时搜索功???
-set hlsearch                 " 开启高亮显示结???
+set incsearch                " 开启实时搜索功
+set hlsearch                 " 开启高亮显示结
 set ignorecase               " ignore letter
-set nowrapscan               " 搜索到文件两端时不重新搜???
+set nowrapscan               " 搜索到文件两端时不重新搜
 set nocompatible             " 关闭兼容模式
 set hidden                   " 允许在有未保存的修改时切换缓冲区
 set autochdir                " 设定文件浏览器目录为当前目录
@@ -41,6 +41,9 @@ set backspace=2              " 设置退格键可用
 set autoindent               " 自动对齐
 set ai!                      " 设置自动缩进
 set smartindent              " 智能自动缩进
+set tabstop=4                " tab显示为4个空格
+set shiftwidth=4             " 使用4个空格的缩进
+
 
 " airline
 " let g:airline_theme="murmur" 
