@@ -75,6 +75,9 @@ set ignorecase               " ignore letter
 set hidden                   " 允许在有未保存的修改时切换缓冲区
 set autochdir                " 设定文件浏览器目录为当前目录
 set fdm=syntax
+set foldenable               " 启用折叠
+set foldmethod=indent        " indent 折叠方式
+set foldlevel=100            " 禁止自动折叠"
 
 " set charset 
 set fenc=utf-8
