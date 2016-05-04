@@ -26,6 +26,7 @@ Bundle 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/tomorrow-theme' 
+Plugin 'NLKNguyen/papercolor-theme'
 " tagbar
 Plugin 'majutsushi/tagbar'
 " multiple cursors
@@ -44,6 +45,7 @@ Plugin 'plasticboy/vim-markdown'
 " syntastic
 Plugin 'scrooloose/syntastic'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'jwalton512/vim-blade'
 Plugin 'pangloss/vim-javascript', {'branch': 'develop'}
 Plugin 'marijnh/tern_for_vim', {'do': 'npm install'}
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -60,7 +62,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " airline
-let g:airline_theme="dracula" 
+let g:airline_theme="behelit" 
 let g:airline_powerline_fonts = 1 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -90,7 +92,7 @@ set fileformats=unix,mac,dos
 set t_Co=256
 set background=dark
 syntax on " open syntax highlight 
-color dracula 
+color PaperColor 
 set cursorline 
 
 " set autowrite
@@ -122,16 +124,11 @@ nmap ,c :CtrlPCmdPalette<CR>
 
 " JSX Settings 
 let g:jsx_pragma_required = 1 
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:syntastic_javascript_checkers = ['eslint'] " use eslint
 
 " tablength exception
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" multiple cursors https://github.com/terryma/vim-multiple-cursors
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
