@@ -75,6 +75,10 @@ set guioptions-=r
 " set leader
 let mapleader = ' ' 
 
+" turn off bell and flash
+set visualbell 
+set t_vb=
+
 " status bar
 set laststatus=1
 
