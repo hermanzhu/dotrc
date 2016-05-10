@@ -1,4 +1,4 @@
-filetype on "File type 
+filetype on "File type
 filetype plugin on
 set mouse=a  " Enable mouse
 set nocompatible " disable VI mode
@@ -20,7 +20,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Auto complete
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
 " tagbar
 Plugin 'majutsushi/tagbar'
 " multiple cursors
@@ -31,7 +32,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " color theme
 Plugin 'NLKNguyen/papercolor-theme'
-" language highlighting 
+" language highlighting
 Plugin 'magic-dot-files/TagHighlight'
 Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
@@ -60,8 +61,16 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " close tags
-Plugin 'vim-scripts/AutoClose'
+Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
+
+" code cs
+Plugin 'stephpy/vim-php-cs-fixer'
+
+" php
+Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'spf13/PIV'
+Plugin 'ervandew/supertab'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -73,10 +82,10 @@ set guioptions-=T
 set guioptions-=r
 
 " set leader
-let mapleader = ' ' 
+let mapleader = ' '
 
 " turn off bell and flash
-set visualbell 
+set visualbell
 set t_vb=
 
 " status bar
@@ -95,19 +104,19 @@ set foldenable               " 启用折叠
 set foldmethod=indent        " indent 折叠方式
 set foldlevel=100            " 禁止自动折叠"
 
-" set charset 
+" set charset
 set fenc=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,gbk,cp936,latin-1
 set fileformat=unix
 set fileformats=unix,mac,dos
 
-" Color Settings 
+" Color Settings
 set t_Co=256
 set background=dark
-syntax on " open syntax highlight 
-color PaperColor 
-set cursorline 
+syntax on " open syntax highlight
+color PaperColor
+set cursorline
 
 " set autowrite
 set conceallevel=0
@@ -133,9 +142,10 @@ let g:ctvxzlp_custom_ignore = 'DS_Store\|git'
 nmap <leader>p :CtrlP<CR>
 nmap <leader>r :CtrlPBufTag<CR>
 nmap <leader>e :CtrlPMRUFiles<CR>
+nmap <leader>cp :ClearCtrlPCache\|:CtrlP<CR>
 
-" JSX Settings 
-let g:jsx_pragma_required = 1 
+" JSX Settings
+let g:jsx_pragma_required = 1
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:syntastic_javascript_checkers = ['eslint'] " use eslint
 
@@ -144,7 +154,7 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-" php documentor 
+" php documentor
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <leader>dc :call pdv#DocumentWithSnip()<CR>
 
@@ -159,3 +169,80 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
+" php cs fix
+let g:php_cs_fixer_path = "~/.composer/vendor/bin/php-cs-fixer"
+let g:php_cs_fixer_level = "symfony"
+let g:php_cs_fixer_config = "default"
+let g:php_cs_fixer_php_path = "php"
+
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
