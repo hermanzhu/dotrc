@@ -32,7 +32,7 @@ Plugin 'kien/ctrlp.vim'
 " hybrid line number mode
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " color theme
-Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'hermanzhu/dotrc'
 " language highlighting
 Plugin 'magic-dot-files/TagHighlight'
 Plugin 'elzr/vim-json'
@@ -116,7 +116,7 @@ set fileformats=unix,mac,dos
 set t_Co=256
 set background=dark
 syntax on " open syntax highlight
-color PaperColor
+color smyck 
 set cursorline
 
 " set autowrite
