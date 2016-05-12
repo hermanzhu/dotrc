@@ -2,6 +2,7 @@ filetype on "File type
 filetype plugin on
 set mouse=a  " Enable mouse
 set nocompatible " disable VI mode
+set textwidth=120 "set textwidth
 
 " Vundle Config
 set nocompatible              " be iMproved, required
