@@ -140,10 +140,10 @@ nmap <F3> :TagbarToggle<CR>
 
 " CtrlP (new fuzzy finder)
 let g:ctvxzlp_custom_ignore = 'DS_Store\|git'
-nmap <leader>p :CtrlP<CR>
+nmap <leader>f :CtrlP<CR>
 nmap <leader>r :CtrlPBufTag<CR>
 nmap <leader>e :CtrlPMRUFiles<CR>
-nmap <leader>cp :ClearCtrlPCache\|:CtrlP<CR>
+nmap <leader>cf :ClearCtrlPCache\|:CtrlP<CR>
 
 " JSX Settings
 let g:jsx_pragma_required = 1
