@@ -28,11 +28,12 @@ Plugin 'majutsushi/tagbar'
 " multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
 " Fuzzy file buffer
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " hybrid line number mode
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " color theme
 Plugin 'hermanzhu/dotrc'
+Plugin 'gosukiwi/vim-atom-dark'
 " language highlighting
 Plugin 'magic-dot-files/TagHighlight'
 Plugin 'elzr/vim-json'
@@ -69,6 +70,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'stephpy/vim-php-cs-fixer'
 
 " php
+Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'spf13/PIV'
 Plugin 'ervandew/supertab'
@@ -92,8 +94,8 @@ set t_vb=
 " status bar
 set laststatus=1
 
-set relativenumber           " 开启相对行
-set nu!                      " 显示行号
+" set relativenumber           " 开启相对行
+" set nu!                      " 显示行号
 set ruler                    " 右下角显示光标位置的状态行
 set incsearch                " 开启实时搜索功
 set hlsearch                 " 开启高亮显示结
@@ -102,7 +104,6 @@ set hidden                   " 允许在有未保存的修改时切换缓冲区
 set autochdir                " 设定文件浏览器目录为当前目录
 set fdm=syntax
 set foldenable               " 启用折叠
-set foldmethod=indent        " indent 折叠方式
 set foldlevel=100            " 禁止自动折叠"
 
 " set charset
@@ -116,14 +117,13 @@ set fileformats=unix,mac,dos
 set t_Co=256
 set background=dark
 syntax on " open syntax highlight
-color smyck 
-set cursorline
+color atom-dark-256
+" set cursorline
 
 " set autowrite
 set conceallevel=0
 set autowriteall
 set backspace=2              " 设置退格键可用
-set autoindent               " 自动对齐
 set ai!                      " 设置自动缩进
 set smartindent              " 智能自动缩进
 set tabstop=4                " tab显示为4个空格
@@ -140,6 +140,8 @@ nmap <F3> :TagbarToggle<CR>
 
 " CtrlP (new fuzzy finder)
 let g:ctvxzlp_custom_ignore = 'DS_Store\|git'
+let g:ctrlp_working_path_mode = 'ra' 
+let g:ctrlp_show_hidden = 1
 nmap <leader>f :CtrlP<CR>
 nmap <leader>r :CtrlPBufTag<CR>
 nmap <leader>e :CtrlPMRUFiles<CR>
@@ -150,7 +152,7 @@ let g:jsx_pragma_required = 1
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:syntastic_javascript_checkers = ['eslint'] " use eslint
 " php syntastic
-" let g:syntastic_php_checkers=['php', 'phpcs']
+let g:syntastic_php_checkers=['php', 'phpcs']
 let g:syntastic_php_phpcs_args='--standard=PSR2'
 
 " tablength exception
@@ -250,3 +252,9 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+" hide line number
+set foldcolumn=0                      " Add a left margin
+highlight! link FoldColumn Normal     " Make it the background colour
+nmap <leader>nn :set norelativenumber\|set nonumber<CR>
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
