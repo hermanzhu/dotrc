@@ -78,12 +78,6 @@ Plugin 'ervandew/supertab'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" set for macvim
-set guifont=Source\ Code\ Pro\ for\ Powerline:h16          " set fonts
-set linespace=18                                           " set line height
-set guioptions-=T
-set guioptions-=r
-
 " set leader
 let mapleader = ' '
 
@@ -258,3 +252,26 @@ set foldcolumn=0                      " Add a left margin
 highlight! link FoldColumn Normal     " Make it the background colour
 nmap <leader>nn :set norelativenumber\|set nonumber<CR>
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+
+
+
+" for gui
+set t_CO=256	      							"Use 256 colors. This is useful for Terminal Vim.
+set guifont=Fira_Code:h17						"Set the default font family and size.
+set linespace=16   						        "Macvim-specific line-height.
+
+set guioptions-=l                               "Disable Gui scrollbars.
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+
+"-------------Auto-Commands--------------"
+
+"Automatically source the Vimrc file on save.
+
+augroup autosourcing
+	autocmd!
+	autocmd BufWritePost .vimrc source %
+augroup END
