@@ -53,6 +53,9 @@ Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 
+" fast fold
+Plugin 'Konfekt/FastFold'
+
 " snips
 Plugin 'SirVer/ultisnips'
 
@@ -72,8 +75,12 @@ Plugin 'stephpy/vim-php-cs-fixer'
 " php
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
-Plugin 'spf13/PIV'
+
+" super tab
 Plugin 'ervandew/supertab'
+
+" comment plugin
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -96,9 +103,6 @@ set hlsearch                 " 开启高亮显示结
 set ignorecase               " ignore letter
 set hidden                   " 允许在有未保存的修改时切换缓冲区
 set autochdir                " 设定文件浏览器目录为当前目录
-set fdm=syntax
-set foldenable               " 启用折叠
-set foldlevel=100            " 禁止自动折叠"
 
 " set charset
 set fenc=utf-8
@@ -118,10 +122,9 @@ color atom-dark-256
 set conceallevel=0
 set autowriteall
 set backspace=2              " 设置退格键可用
-set ai!                      " 设置自动缩进
-set smartindent              " 智能自动缩进
 set tabstop=4                " tab显示为4个空格
 set shiftwidth=4             " 使用4个空格的缩进
+set expandtab
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
@@ -248,7 +251,7 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " hide line number
-set foldcolumn=0                      " Add a left margin
+set foldcolumn=1                      " Add a left margin
 highlight! link FoldColumn Normal     " Make it the background colour
 nmap <leader>nn :set norelativenumber\|set nonumber<CR>
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
@@ -258,8 +261,8 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 
 " for gui
 set t_CO=256	      							"Use 256 colors. This is useful for Terminal Vim.
-set guifont=Fira_Code:h17						"Set the default font family and size.
-set linespace=16   						        "Macvim-specific line-height.
+set guifont=Fira\ Code:h15						"Set the default font family and size.
+set linespace=17   						        "Macvim-specific line-height.
 
 set guioptions-=l                               "Disable Gui scrollbars.
 set guioptions-=L
