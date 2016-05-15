@@ -260,14 +260,17 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 
 
 " for gui
-set t_CO=256	      							"Use 256 colors. This is useful for Terminal Vim.
-set guifont=Fira\ Code:h15						"Set the default font family and size.
-set linespace=17   						        "Macvim-specific line-height.
+if has("gui_running")
+    set t_CO=256	      							"Use 256 colors. This is useful for Terminal Vim.
+    set macligatures                                "Set fira code font for macvim
+    set guifont=Fira\ Code:h15						"Set the default font family and size.
+    set linespace=17   						        "Macvim-specific line-height.
 
-set guioptions-=l                               "Disable Gui scrollbars.
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
+    set guioptions-=l                               "Disable Gui scrollbars.
+    set guioptions-=L
+    set guioptions-=r
+    set guioptions-=R
+endif
 
 
 "-------------Auto-Commands--------------"
