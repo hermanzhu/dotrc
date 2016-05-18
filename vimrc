@@ -82,6 +82,9 @@ Plugin 'ervandew/supertab'
 " comment plugin
 Plugin 'scrooloose/nerdcommenter'
 
+" git wrapper
+Plugin 'tpope/vim-fugitive'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -144,13 +147,33 @@ nmap <leader>r :CtrlPBufTag<CR>
 nmap <leader>e :CtrlPMRUFiles<CR>
 nmap <leader>cf :ClearCtrlPCache\|:CtrlP<CR>
 
+" location list
+nmap <leader>ln :lne<CR>
+nmap <leader>lp :lpr<CR>
+
 " JSX Settings
 let g:jsx_pragma_required = 1
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:syntastic_javascript_checkers = ['eslint'] " use eslint
+
+" statusline
+set statusline=
+set statusline+=%7*\[%n]                                  "buffernr
+set statusline+=%1*\ %<%F\                                "File+path
+set statusline+=%2*\ %y\                                  "FileType
+set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+
+" syntastic
+let g:syntastic_loc_list_height = 3
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
 " php syntastic
 let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_php_phpcs_args='--standard=PSR2'
+let g:syntastic_php_phpcs_args='--standard=Symfony2'
 
 " tablength exception
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -270,6 +293,12 @@ if has("gui_running")
     set guioptions-=L
     set guioptions-=r
     set guioptions-=R
+    
+    hi User1 guifg=#eea040 guibg=#222222
+    hi User2 guifg=#dd3333 guibg=#222222
+    hi User3 guifg=#ff66ff guibg=#222222
+    hi User4 guifg=#a0ee40 guibg=#222222
+    hi User5 guifg=#eeee40 guibg=#222222
 endif
 
 
