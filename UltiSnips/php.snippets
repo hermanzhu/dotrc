@@ -1,0 +1,40 @@
+snippet psc "php simple class"
+<?php
+
+namespace ${1}
+
+/**
+ * Class: ${2}
+ *
+ * ${3}
+ */
+class ${2}
+{
+	${0}
+}
+
+endsnippet
+
+
+snippet lsp "laravel service provider"
+<?php
+
+namespace ${1}
+
+use Illuminate\Support\ServiceProvider;
+
+/**
+ * Class: ${2}
+ *
+ * ${3}
+ * @see ServiceProvider
+ */
+class ${2} extends ServiceProvider
+{
+	public function register()
+	{
+		${0}
+	}
+}
+
+endsnippet
