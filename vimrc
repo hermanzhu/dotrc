@@ -280,6 +280,19 @@ highlight! link FoldColumn Normal     " Make it the background colour
 nmap <leader>nn :set norelativenumber\|set nonumber<CR>
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
+" easier window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+
+" Load the current buffer in Chrome
+nmap ,c :!open -a Google\ Chrome<cr>
+
+" Swap files out of the project root
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
 
 
 
