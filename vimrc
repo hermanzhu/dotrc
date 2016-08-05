@@ -199,6 +199,7 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:snips_author="herman <i@imzsy.com>"
 
 " php cs fix
 let g:php_cs_fixer_path = "~/.composer/vendor/bin/php-cs-fixer"

@@ -1,0 +1,19 @@
+snippet class "Class declaration template" b
+<?php
+
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+/**
+ * Class ${2:`!p snip.rv=snip.basename`}
+ * @author ${3:`!v g:snips_author`}
+ */
+class $2
+{
+	$0
+}
+endsnippet
