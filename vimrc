@@ -20,7 +20,6 @@ Plugin 'VundleVim/Vundle.vim'
 " NertTree Plugin
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'ryanoasis/vim-devicons'
 " Auto complete
 " Bundle 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
@@ -85,6 +84,9 @@ Plugin 'scrooloose/nerdcommenter'
 
 " git wrapper
 Plugin 'tpope/vim-fugitive'
+
+" icons
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
