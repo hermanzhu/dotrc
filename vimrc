@@ -20,6 +20,7 @@ Plugin 'VundleVim/Vundle.vim'
 " NertTree Plugin
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ryanoasis/vim-devicons'
 " Auto complete
 " Bundle 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
@@ -42,9 +43,6 @@ Plugin 'plasticboy/vim-markdown'
 " syntastic
 Plugin 'scrooloose/syntastic'
 Plugin 'maksimr/vim-jsbeautify'
-Plugin 'jwalton512/vim-blade'
-Plugin 'tobyS/vmustache'
-Plugin 'tobyS/pdv'
 Plugin 'pangloss/vim-javascript', {'branch': 'develop'}
 Plugin 'marijnh/tern_for_vim', {'do': 'npm install'}
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -75,6 +73,9 @@ Plugin 'stephpy/vim-php-cs-fixer'
 " php
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'jwalton512/vim-blade'
+Plugin 'tobyS/vmustache'
+Plugin 'tobyS/pdv'
 
 " super tab
 Plugin 'ervandew/supertab'
@@ -152,7 +153,10 @@ nmap <leader>ln :lne<CR>
 nmap <leader>lp :lpr<CR>
 
 " JSX Settings
-let g:jsx_pragma_required = 1
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+let g:jsx_pragma_required = 0
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:syntastic_javascript_checkers = ['eslint'] " use eslint
 
@@ -301,7 +305,8 @@ set directory=~/.vim/swap//
 if has("gui_running")
     set t_CO=256	      							"Use 256 colors. This is useful for Terminal Vim.
     set macligatures                                "Set fira code font for macvim
-    set guifont=Fira\ Code:h15						"Set the default font family and size.
+"    set guifont=Fira\ Code:h15 		 			"Set the default font family and size.
+    set guifont=FuraCode\ Nerd\ Font:h15            "Use Nerd path.
     set linespace=17   						        "Macvim-specific line-height.
 
     set guioptions-=l                               "Disable Gui scrollbars.
