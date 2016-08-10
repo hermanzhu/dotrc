@@ -173,7 +173,7 @@ set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
 let g:syntastic_loc_list_height = 3
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
@@ -185,6 +185,8 @@ let g:syntastic_php_phpcs_args='--standard=Symfony2'
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+" donot check syntastic when open javascript files.
+autocmd FileType javascript let g:syntastic_check_on_open=0
 
 " php documentor
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
