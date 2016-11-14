@@ -17,6 +17,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Grep.vim
+Plugin 'vim-scripts/grep.vim'
 " NertTree Plugin
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
