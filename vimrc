@@ -137,6 +137,8 @@ set expandtab
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
 imap <F2> <ESC> :NERDTreeToggle<CR>
+let NERDTreeMinimalUI=1
+let NERDTreeShowHidden=1
 
 " Tagbar
 let g:tagbar_width=35
