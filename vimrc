@@ -19,6 +19,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Grep.vim
 Plugin 'vim-scripts/grep.vim'
+" Align
+Plugin 'godlygeek/tabular'
 " NertTree Plugin
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -51,6 +53,11 @@ Plugin 'heavenshell/vim-jsdoc', {'for': ['javascript', 'jsx']}
 Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
+
+" typescript
+Plugin 'leafgarland/typescript-vim'
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'Quramy/tsuquyomi'
 
 " fast fold
 Plugin 'Konfekt/FastFold'
