@@ -150,11 +150,15 @@ set tabstop=4                " tab显示为4个空格
 set shiftwidth=4             " 使用4个空格的缩进
 set expandtab
 
+set fillchars+=vert:\ 
+hi vertsplit guifg=#1D1F21 guibg=#1D1F21
+
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
 imap <F2> <ESC> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.git','\~$','\.swp']
 
 " Tagbar
 let g:tagbar_width=35
