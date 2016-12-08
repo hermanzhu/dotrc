@@ -17,6 +17,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Distraction free mode
+" Plugin 'junegunn/goyo.vim'
+" Plugin 'junegunn/limelight.vim'
+
 " Grep.vim
 Plugin 'vim-scripts/grep.vim'
 " Align
@@ -44,7 +48,8 @@ Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 Plugin 'plasticboy/vim-markdown'
 " syntastic
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'pangloss/vim-javascript', {'branch': 'develop'}
 Plugin 'marijnh/tern_for_vim', {'do': 'npm install'}
@@ -110,6 +115,10 @@ set t_vb=
 " status bar
 set laststatus=1
 
+" goyo
+let g:goyo_width = 120
+nnoremap <leader>gy :Goyo<CR>
+
 " set relativenumber           " 开启相对行
 " set nu!                      " 显示行号
 set ruler                    " 右下角显示光标位置的状态行
@@ -153,9 +162,10 @@ let g:tagbar_autofocus=1
 nmap <F3> :TagbarToggle<CR>
 
 " CtrlP (new fuzzy finder)
-let g:ctvxzlp_custom_ignore = 'DS_Store\|git'
+let g:ctvxzlp_custom_ignore = 'node_modules\DS_Store\|git'
 let g:ctrlp_working_path_mode = 'ra' 
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_match_window = 'top,order::ttd,min:1,max:20,results:20'
 nmap <leader>f :CtrlP<CR>
 nmap <leader>r :CtrlPBufTag<CR>
 nmap <leader>e :CtrlPMRUFiles<CR>
@@ -171,35 +181,57 @@ let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 let g:jsx_pragma_required = 0
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-let g:syntastic_javascript_checkers = ['eslint'] " use eslint
 
 " statusline
+set laststatus=2
 set statusline=
-set statusline+=%7*\[%n]                                  "buffernr
+"set statusline+=%7*\[%n]                                  "buffernr
 set statusline+=%1*\ %<%F\                                "File+path
-set statusline+=%2*\ %y\                                  "FileType
-set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+"set statusline+=%2*\ %y\                                  "FileType
+set statusline+=%{ALEGetStatusLine()}
+"set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=%8*\ %=\ row:%l/%L\ (%2p%%)\             "Rownumber/total (%)
+
+" async syntastic
+let g:ale_sign_column_always = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_linters = {
+            \   'php': ['phpcs'],
+            \}
+let g:ale_php_phpcs_standard = 'Symfony2'
 
 " syntastic
-let g:syntastic_loc_list_height = 3
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_loc_list_height = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
+"let g:syntastic_javascript_checkers = ['eslint'] " use eslint
 
 " php syntastic
-let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_php_phpcs_args='--standard=Symfony2'
+"let g:syntastic_php_checkers=['php', 'phpcs']
+"let g:syntastic_php_phpcs_args='--standard=Symfony2'
 
 " tablength exception
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " donot check syntastic when open javascript files.
-autocmd FileType javascript let g:syntastic_check_on_open=0
+"autocmd FileType javascript let g:syntastic_check_on_open=0
 
-" php documentor
+" devicon
+autocmd FileType nerdtree setlocal nolist
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_ctrlp = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+
+" 
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <leader>dc :call pdv#DocumentWithSnip()<CR>
 
@@ -299,6 +331,7 @@ set foldcolumn=1                      " Add a left margin
 highlight! link FoldColumn Normal     " Make it the background colour
 nmap <leader>nn :set norelativenumber\|set nonumber<CR>
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+highlight SignColumn guibg=#1D1F21
 
 " easier window navigation
 nmap <C-h> <C-w>h
