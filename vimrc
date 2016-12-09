@@ -28,6 +28,7 @@ Plugin 'godlygeek/tabular'
 " NertTree Plugin
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Auto complete
 " Bundle 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
@@ -159,6 +160,9 @@ imap <F2> <ESC> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git','\~$','\.swp']
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+set ambiwidth=double 
 
 " Tagbar
 let g:tagbar_width=35
@@ -230,7 +234,7 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " devicon
 autocmd FileType nerdtree setlocal nolist
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_ctrlp = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
@@ -359,6 +363,7 @@ if has("gui_running")
     set macligatures                                "Set fira code font for macvim
 "    set guifont=Fira\ Code:h15 		 			"Set the default font family and size.
     set guifont=FuraCode\ Nerd\ Font:h15            "Use Nerd path.
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h15
     set linespace=17   						        "Macvim-specific line-height.
 
     set guioptions-=l                               "Disable Gui scrollbars.
