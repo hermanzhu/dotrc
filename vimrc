@@ -50,8 +50,9 @@ Plugin 'magic-dot-files/TagHighlight'
 Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 Plugin 'plasticboy/vim-markdown'
-" syntastic
-"Plugin 'scrooloose/syntastic'
+
+" syntastic use ale async check.
+" Plugin 'scrooloose/syntastic'
 Plugin 'w0rp/ale'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'pangloss/vim-javascript', {'branch': 'develop'}
@@ -108,7 +109,7 @@ Plugin 'ryanoasis/vim-devicons'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" set leader
+" set space as leader key.
 let mapleader = ' '
 
 " turn off bell and flash
@@ -116,8 +117,8 @@ set visualbell
 set t_vb=
 
 " goyo
-let g:goyo_width = 120
-nnoremap <leader>gy :Goyo<CR>
+"let g:goyo_width = 120
+"nnoremap <leader>gy :Goyo<CR>
 
 " set relativenumber           " 开启相对行
 " set nu!                      " 显示行号
@@ -150,6 +151,7 @@ set tabstop=4                " tab显示为4个空格
 set shiftwidth=4             " 使用4个空格的缩进
 set expandtab
 
+" split line status.
 set fillchars+=vert:\ 
 hi vertsplit guifg=#1D1F21 guibg=#1D1F21
 
@@ -189,7 +191,7 @@ let g:javascript_plugin_flow = 1
 let g:jsx_pragma_required = 0
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
-" statusline
+" statusline default hidden.
 set laststatus=0
 set statusline=
 "set statusline+=%7*\[%n]                                  "buffernr
@@ -228,8 +230,6 @@ let g:ale_php_phpcs_standard = 'Symfony2'
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-" donot check syntastic when open javascript files.
-"autocmd FileType javascript let g:syntastic_check_on_open=0
 
 " devicon
 autocmd FileType nerdtree setlocal nolist
@@ -238,7 +238,7 @@ let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_ctrlp = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 
-" 
+" php documentor for vim. Generates php docblocks. 
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <leader>dc :call pdv#DocumentWithSnip()<CR>
 
@@ -265,7 +265,7 @@ let g:php_cs_fixer_level = "symfony"
 let g:php_cs_fixer_config = "default"
 let g:php_cs_fixer_php_path = "php"
 
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -362,7 +362,6 @@ if has("gui_running")
     set macligatures                                "Set fira code font for macvim
 "    set guifont=Fira\ Code:h15 		 			"Set the default font family and size.
     set guifont=FuraCode\ Nerd\ Font:h15            "Use Nerd path.
-    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h15
     set linespace=17   						        "Macvim-specific line-height.
 
     set guioptions-=l                               "Disable Gui scrollbars.
