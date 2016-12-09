@@ -38,6 +38,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
 " Fuzzy file buffer
 Plugin 'ctrlpvim/ctrlp.vim'
+" motion
+Plugin 'easymotion/vim-easymotion'
 " hybrid line number mode
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " color theme
@@ -113,9 +115,6 @@ let mapleader = ' '
 set visualbell
 set t_vb=
 
-" status bar
-set laststatus=1
-
 " goyo
 let g:goyo_width = 120
 nnoremap <leader>gy :Goyo<CR>
@@ -173,7 +172,7 @@ nmap <F3> :TagbarToggle<CR>
 let g:ctvxzlp_custom_ignore = 'node_modules\DS_Store\|git'
 let g:ctrlp_working_path_mode = 'ra' 
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_match_window = 'top,order::ttd,min:1,max:20,results:20'
+let g:ctrlp_match_window = 'bottom,order::ttd,min:1,max:12,results:12'
 nmap <leader>f :CtrlP<CR>
 nmap <leader>r :CtrlPBufTag<CR>
 nmap <leader>e :CtrlPMRUFiles<CR>
@@ -191,7 +190,7 @@ let g:jsx_pragma_required = 0
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " statusline
-set laststatus=2
+set laststatus=0
 set statusline=
 "set statusline+=%7*\[%n]                                  "buffernr
 set statusline+=%1*\ %<%F\                                "File+path
@@ -234,7 +233,7 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " devicon
 autocmd FileType nerdtree setlocal nolist
-let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_ctrlp = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
