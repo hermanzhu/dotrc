@@ -237,6 +237,8 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_ctrlp = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsEnableFoldersOpenClose = 1
 
 " php documentor for vim. Generates php docblocks. 
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
