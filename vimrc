@@ -188,6 +188,10 @@ nmap <leader>cf :ClearCtrlPCache\|:CtrlP<CR>
 nmap <leader>ln :lne<CR>
 nmap <leader>lp :lpr<CR>
 
+" quickfix window
+nmap <leader>qo :copen 9<CR>
+nmap <leader>qc :cclose<CR>
+
 " JSX Settings
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
