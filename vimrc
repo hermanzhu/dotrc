@@ -29,6 +29,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Async run command
+Plugin 'skywind3000/asyncrun.vim'
 " Auto complete
 " Bundle 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
@@ -163,6 +165,8 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git','\~$','\.swp']
 let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
 let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+let g:NERDTreeDirArrowExpandable = "+"
+let g:NERDTreeDirArrowCollapsible = "~"
 set ambiwidth=double 
 
 " Tagbar
@@ -238,7 +242,7 @@ let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_ctrlp = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:WebDevIconsEnableFoldersOpenClose = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 
 " php documentor for vim. Generates php docblocks. 
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
