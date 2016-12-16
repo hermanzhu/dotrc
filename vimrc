@@ -344,6 +344,19 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
+let g:neocomplete#enable_insert_char_pre = 1
+let g:neocomplete#enable_at_startup = 0
+autocmd VimEnter * NeoCompleteEnable    " Workaround to make multiple-cursors fast
+" << cut >>
+" Make multiple cursors fast with neocomplete
+function! Multiple_cursors_before()
+    exe 'NeoCompleteDisable'
+endfunction
+
+function! Multiple_cursors_after()
+    exe 'NeoCompleteEnable'
+endfunction
+
 " hide line number
 set foldcolumn=1                      " Add a left margin
 highlight! link FoldColumn Normal     " Make it the background colour
