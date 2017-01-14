@@ -3,6 +3,7 @@ filetype plugin on
 set mouse=a  " Enable mouse
 set nocompatible " disable VI mode
 set textwidth=120 "set textwidth
+set completeopt=menu " disable scratch window
 
 " Vundle Config
 set nocompatible              " be iMproved, required
