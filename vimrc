@@ -36,6 +36,7 @@ Plugin 'skywind3000/asyncrun.vim'
 " Auto complete
 " Bundle 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/vimproc.vim', {'do' : 'make'}
 " tagbar
 Plugin 'majutsushi/tagbar'
 " multiple cursors
