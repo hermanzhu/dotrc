@@ -215,12 +215,16 @@ set statusline+=%8*\ %=\ row:%l/%L\ (%2p%%)\             "Rownumber/total (%)
 
 " async syntastic
 let g:ale_sign_column_always = 1
+let g:ale_set_loclist = 0
+let g:ale_keep_list_window_open = 0
+let g:ale_set_quickfix = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_linters = {
             \   'php': ['phpcs'],
+            \   'ts': ['tslint']
             \}
 let g:ale_php_phpcs_standard = 'Symfony2'
 
@@ -283,6 +287,10 @@ let g:php_cs_fixer_php_path = "php"
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
@@ -301,6 +309,8 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+let g:tsuquyomi_completion_detail = 1
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
