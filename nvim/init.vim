@@ -43,7 +43,7 @@ set statusline=
 "set statusline+=%7*\[%n]                                 " buffernr
 set statusline+=%1*\ %<%F\                                " File+path
 "set statusline+=%2*\ %y\                                 " FileType
-set statusline+=%{ALEGetStatusLine()}
+"set statusline+=%{ALEGetStatusLine()}
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%8*\ %=\ row:%l/%L\ (%2p%%)\             "Rownumber/total (%)
@@ -72,6 +72,10 @@ Plug 'ryanoasis/vim-devicons'
 
 " relative line numbers
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
+" fuzzy find
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
