@@ -123,6 +123,9 @@ Plug 'junegunn/fzf.vim'
   command! -nargs=+ -complete=dir AgIn call SearchWithAgInDirectory(<f-args>)
 " }}}
 
+" language support
+Plug 'leafgarland/typescript-vim'
+
 " nvim completion manager
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -131,6 +134,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 " (Completion plugin option 1)
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
+Plug 'mhartington/nvim-typescript'
 " {{{
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
