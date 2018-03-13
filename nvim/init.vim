@@ -138,13 +138,15 @@ Plug 'mhartington/nvim-typescript'
 " {{{
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-  let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ }
+  "let g:LanguageClient_serverCommands = {
+  "  \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+  "  \ 'javascript': ['javascript-typescript-stdio'],
+  "  \ 'javascript.jsx': ['javascript-typescript-stdio'],
+  "  \ }
 " }}}
 
+" comment
+Plug 'scrooloose/nerdcommenter'
 
 
 call plug#end()
