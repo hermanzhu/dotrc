@@ -27,6 +27,10 @@ set fileformat=unix
 " use true color
 set termguicolors
 
+" show relative line number default.
+set number relativenumber
+
+
 " easier window navigation
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
@@ -58,6 +62,11 @@ call plug#begin()
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" {{{
+  let g:nerdtree_tabs_open_on_console_startup=0
+  let g:NERDTreeDirArrowExpandable = '▸'
+  let g:NERDTreeDirArrowCollapsible = '▾'
+" }}}
 
 " color theme
 Plug 'hermanzhu/dotrc'
@@ -75,6 +84,12 @@ Plug 'ryanoasis/vim-devicons'
 
 " relative line numbers
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
+" tags
+Plug 'majutsushi/tagbar'
+" {{{
+  nnoremap <silent> <F4> :TagbarToggle<CR>
+" }}}
 
 " fuzzy find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -131,10 +146,16 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-" (Completion plugin option 1)
 Plug 'roxma/nvim-completion-manager'
+
+" php auto complete
 Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
+" {{{
+" }}}
+
 Plug 'mhartington/nvim-typescript'
+
+
 " {{{
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
