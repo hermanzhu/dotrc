@@ -61,7 +61,6 @@ call plug#begin()
 " NertTree Plugin
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " {{{
   let g:nerdtree_tabs_open_on_console_startup=0
   let g:NERDTreeDirArrowExpandable = '▸'
