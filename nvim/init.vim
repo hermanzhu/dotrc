@@ -84,6 +84,9 @@ Plug 'ryanoasis/vim-devicons'
 " relative line numbers
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
+" Git gutter
+Plug 'airblade/vim-gitgutter'
+
 " tags
 Plug 'majutsushi/tagbar'
 " {{{
@@ -145,7 +148,9 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-Plug 'roxma/nvim-completion-manager'
+" deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
 
 " php auto complete
 Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
