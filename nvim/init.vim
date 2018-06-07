@@ -1,5 +1,6 @@
 " install vim-plug first
 " curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" npm i -g neovim typescript
 
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -157,8 +158,7 @@ Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer ru
 " {{{
 " }}}
 
-Plug 'mhartington/nvim-typescript'
-
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 
 " {{{
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
