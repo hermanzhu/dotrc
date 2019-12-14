@@ -144,6 +144,9 @@ Plug 'junegunn/fzf.vim'
 " language support
 Plug 'leafgarland/typescript-vim'
 
+" dart
+Plug 'dart-lang/dart-vim-plugin'
+
 " nvim completion manager
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -176,7 +179,7 @@ Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
-colorscheme smyck
+colorscheme vim-material
 set guifont=FuraCode\ Nerd\ Font:h15
 
 
