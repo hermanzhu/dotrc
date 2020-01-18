@@ -74,6 +74,9 @@ let g:coc_global_extensions = [
   \ 'coc-python',
   \ 'coc-json',
   \ 'coc-tsserver',
+  \ 'coc-tslint-plugin',
+  \ 'coc-json',
+  \ 'coc-emmet',
   \ 'coc-html',
   \ 'coc-css',
   \ 'coc-yaml',
@@ -107,8 +110,12 @@ Plug 'tpope/vim-surround'
 " relative line numbers
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
-" laravel blade
+" laravel blade syntax
 Plug 'jwalton512/vim-blade'
+
+" typescript jsx syntax
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " tags
 Plug 'majutsushi/tagbar'
