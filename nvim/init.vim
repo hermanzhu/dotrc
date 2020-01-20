@@ -282,8 +282,8 @@ highlight def link Lf_hl_help         Comment
 highlight def link Lf_hl_helpCmd      Identifier
 
 highlight def Lf_hl_popup_cursor       guifg=#14212b guibg=#5E81AC gui=NONE
-highlight def Lf_hl_popup_inputText    guifg=#ecebf0 guibg=#34323E gui=bold
-highlight def Lf_hl_popup_blank        guifg=NONE    guibg=#34323E gui=NONE
+highlight def Lf_hl_popup_inputText    guifg=#ecebf0 guibg=#434C5E gui=bold
+highlight def Lf_hl_popup_blank        guifg=NONE    guibg=#434C5E gui=NONE
 highlight def Lf_hl_popup_prompt       guifg=#5E81AC guibg=NONE    gui=bold
 highlight def Lf_hl_popup_lineInfo     guifg=#353129 guibg=#dce6da gui=bold
 highlight def Lf_hl_popup_total        guifg=#f2ebc7 guibg=#6e7476 gui=bold
