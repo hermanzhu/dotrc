@@ -5,6 +5,10 @@
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 filetype on "File type
 filetype plugin on
 set mouse=a  " Enable mouse
@@ -333,7 +337,7 @@ highlight clear SignColumn
 function! LightlineGitBlame() abort
   let blame = get(b:, 'coc_git_blame', '')
   " return blame
-  return winwidth(0) > 120 ? blame : ''
+  return winwidth(0) > 10 ? blame : ''
 endfunction
 
 " explorer
@@ -346,10 +350,10 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'helloworld' ] ],
+      \             [ 'gitbranch', 'blame', 'readonly', 'filename', 'modified', 'helloworld' ] ],
       \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'blame', 'fileencoding', 'filetype' ] ]
+      \              [ 'blame', 'percent' ],
+      \              [ 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component': {
       \ },
