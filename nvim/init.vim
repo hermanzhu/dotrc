@@ -352,7 +352,7 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'blame', 'readonly', 'filename', 'modified', 'helloworld' ] ],
       \   'right': [ [ 'lineinfo' ],
-      \              [ 'blame', 'percent' ],
+      \              [ 'percent' ],
       \              [ 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component': {
