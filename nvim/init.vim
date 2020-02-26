@@ -121,6 +121,10 @@ Plug 'jwalton512/vim-blade'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
+" brew tap universal-ctags/universal-ctags
+" brew install --with-jansson --HEAD universal-ctags/universal-ctags/universal-ctags
+Plug 'liuchengxu/vista.vim'
+
 " tags
 Plug 'majutsushi/tagbar'
 " {{{
@@ -285,10 +289,10 @@ highlight def link Lf_hl_popup_cwd    Lf_hl_popup_category
 highlight def link Lf_hl_help         Comment
 highlight def link Lf_hl_helpCmd      Identifier
 
-highlight def Lf_hl_popup_cursor       guifg=#14212b guibg=#5E81AC gui=NONE
+highlight def Lf_hl_popup_cursor       guifg=#14212b guibg=#ecebf0 gui=NONE
 highlight def Lf_hl_popup_inputText    guifg=#ecebf0 guibg=#434C5E gui=bold
 highlight def Lf_hl_popup_blank        guifg=NONE    guibg=#434C5E gui=NONE
-highlight def Lf_hl_popup_prompt       guifg=#5E81AC guibg=NONE    gui=bold
+highlight def Lf_hl_popup_prompt       guifg=#5E81AC guibg=#65B0ED gui=bold
 highlight def Lf_hl_popup_lineInfo     guifg=#353129 guibg=#dce6da gui=bold
 highlight def Lf_hl_popup_total        guifg=#f2ebc7 guibg=#6e7476 gui=bold
 highlight def Lf_hl_popup_spin         guifg=#e6e666 guibg=NONE    gui=NONE
@@ -323,7 +327,7 @@ xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
 noremap go :<C-U>Leaderf! rg --recall<CR>
 
 " should use `Leaderf gtags --update` first
-let g:Lf_GtagsAutoGenerate = 0
+let g:Lf_GtagsAutoGenerate = 1
 let g:Lf_Gtagslabel = 'native-pygments'
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
@@ -350,7 +354,7 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'blame', 'readonly', 'filename', 'modified', 'helloworld' ] ],
+      \             [ 'gitbranch', 'blame', 'filename', 'modified', 'method' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'fileencoding', 'filetype' ] ]
@@ -359,7 +363,8 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
-      \   'blame': 'LightlineGitBlame'
+      \   'blame': 'LightlineGitBlame',
+      \   'method': 'NearestMethodOrFunction'
       \ },
       \ }
 " lightline end
