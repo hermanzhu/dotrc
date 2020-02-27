@@ -74,6 +74,7 @@ let g:coc_global_extensions = [
   \ 'coc-explorer',
   \ 'coc-ultisnips',
   \ 'coc-git',
+  \ 'coc-tag',
   \ 'coc-phpls',
   \ 'coc-python',
   \ 'coc-json',
@@ -120,16 +121,6 @@ Plug 'jwalton512/vim-blade'
 " typescript jsx syntax
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-
-" brew tap universal-ctags/universal-ctags
-" brew install --with-jansson --HEAD universal-ctags/universal-ctags/universal-ctags
-Plug 'liuchengxu/vista.vim'
-
-" tags
-Plug 'majutsushi/tagbar'
-" {{{
-  nnoremap <silent> <F4> :TagbarToggle<CR>
-" }}}
 
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -319,6 +310,7 @@ noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+noremap <leader>ff :<C-U><C-R>=printf("Leaderf function %s", "")<CR><CR>
 
 noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
 noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
@@ -353,7 +345,7 @@ nmap ge :CocCommand explorer
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
+      \   'left': [ [ 'mode' ],
       \             [ 'gitbranch', 'blame', 'filename', 'modified', 'method' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
