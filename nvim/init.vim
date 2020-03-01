@@ -139,7 +139,7 @@ let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_underline = 1
 
-set guifont=FuraCode\ Nerd\ Font:h15
+set guifont=Jetbrains\ Mono:h15
 
 " line number
 highlight! link FoldColumn Normal     " Make it the background colour
@@ -271,7 +271,7 @@ let g:Lf_IgnoreCurrentBufferName = 1
 " popup mode
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
-let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "FuraCode\ Nerd\ Font" }
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "Jetbrains\ Mono" }
 let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 " let g:Lf_PopupColorscheme = 'default'
 " Leaderf-popupp
@@ -374,6 +374,8 @@ let g:lightline = {
       \              [ 'percent' ],
       \              [ 'blame', 'fileencoding', 'filetype' ] ]
       \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
       \ 'component': {
       \ },
       \ 'component_function': {
@@ -382,4 +384,9 @@ let g:lightline = {
       \   'method': 'NearestMethodOrFunction'
       \ },
       \ }
+let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
+let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
+let s:palette.inactive.middle = s:palette.normal.middle
+let s:palette.tabline.middle = s:palette.normal.middle
+call insert(s:palette.normal.right, s:palette.normal.left[1], 0)
 " lightline end
