@@ -92,7 +92,7 @@ let g:coc_global_extensions = [
 call plug#begin()
 
 " color theme
-" Plug 'hermanzhu/dotrc'
+Plug 'hermanzhu/dotrc'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 
@@ -133,7 +133,7 @@ Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 
 call plug#end()
 
-colorscheme nord
+colorscheme ThemerVim
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
@@ -337,19 +337,42 @@ function! LightlineGitBlame() abort
 endfunction
 
 " explorer
-nmap ge :CocCommand explorer
-    \ --toggle
-    \ --sources=buffer+,file+
-    \ --file-columns=selection:clip:indent:icon:filename;fullpath;size;modified;readonly <CR>
+let g:coc_explorer_global_presets = {
+\   '.vim': {
+\      'root-uri': '~/.config/nvim',
+\   },
+\   'floating': {
+\      'position': 'floating',
+\   },
+\   'floatingLeftside': {
+\      'position': 'floating',
+\      'floating-position': 'left-center',
+\      'floating-width': 50,
+\   },
+\   'floatingRightside': {
+\      'position': 'floating',
+\      'floating-position': 'left-center',
+\      'floating-width': 50,
+\   },
+\   'simplify': {
+\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\ }
+" Use preset argument to open it
+nmap <space>ed :CocCommand explorer --preset .vim<CR>
+nmap <space>ef :CocCommand explorer --preset floating<CR>
+
+" List all presets
+nmap <space>el :CocList explPresets
 
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode' ],
-      \             [ 'gitbranch', 'blame', 'filename', 'modified', 'method' ] ],
+      \             [ 'gitbranch', 'filename', 'modified', 'method' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'fileencoding', 'filetype' ] ]
+      \              [ 'blame', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component': {
       \ },
