@@ -1,1 +1,1 @@
-../../themer/Vim lightline/ThemerVimLightline.vim
+../../../themer/Vim lightline/ThemerVimLightline.vim
