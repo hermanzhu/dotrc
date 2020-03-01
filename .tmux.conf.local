@@ -6,6 +6,10 @@
 
 # -- navigation ----------------------------------------------------------------
 
+# True color
+set -g default-terminal "screen-256color"
+set -g terminal-overrides ",xterm-256color:Tc"
+
 # if you're running tmux within iTerm2
 #   - and tmux is 1.9 or 1.9a
 #   - and iTerm2 is configured to let option key act as +Esc
@@ -180,7 +184,7 @@ tmux_conf_theme_right_separator_sub='|'
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left='💻 #{loadavg},#{?battery_status, #{battery_status},}#{?battery_percentage, #{battery_percentage},} '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}%R ,%b-%d | #(curl wttr.in/Shanghai?format=3) | #{hostname} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}%R , %b-%d | #(curl wttr.in/Shanghai?format=3) | #{hostname} '
 
 # powerline
 tmux_conf_theme_left_separator_main='\uE0B0'
@@ -194,7 +198,7 @@ tmux_conf_theme_status_left_bg='#6EBB82,#F79532,#00afff'  # yellow, pink, white 
 tmux_conf_theme_status_left_attr='bold,none,none'
 
 # status right style
-tmux_conf_theme_status_right_fg='#c0c0c0,#e4e4e4,#23292D' # light gray, white, black
+tmux_conf_theme_status_right_fg='#f0f0f0,#e4e4e4,#23292D' # light gray, white, black
 tmux_conf_theme_status_right_bg='#23292D,#5073B8,#e4e4e4' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,bold'
 

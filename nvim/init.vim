@@ -366,7 +366,7 @@ nmap <space>ef :CocCommand explorer --preset floating<CR>
 nmap <space>el :CocList explPresets
 
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'ThemerVimLightline',
       \ 'active': {
       \   'left': [ [ 'mode' ],
       \             [ 'gitbranch', 'filename', 'modified', 'method' ] ],
