@@ -278,37 +278,153 @@ let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
 let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "Jetbrains\ Mono" }
 let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
-" let g:Lf_PopupColorscheme = 'default'
+let g:Lf_PopupColorscheme = 'default'
+
+let g:Lf_PopupPalette = {
+            \  'dark': {
+            \      'Lf_hl_popup_window': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#ebdbb2',
+            \                'guibg': '#23292D',
+            \                'cterm': 'NONE',
+            \                'ctermfg': '255',
+            \                'ctermbg': '237'
+            \              },
+            \      'Lf_hl_cursorline': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#FA7218',
+            \                'guibg': 'NONE',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_match': {
+            \                'gui': 'bold',
+            \                'font': 'NONE',
+            \                'guifg': '#1CD814',
+            \                'guibg': 'NONE',
+            \                'cterm': 'bold',
+            \                'ctermfg': '14',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_inputText': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#ebdbb2',
+            \                'guibg': '#32302f',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_blank': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': 'NONE',
+            \                'guibg': '#3c3836',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': '239'
+            \              },
+            \      'Lf_hl_popup_cwd': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#a89984',
+            \                'guibg': '#3c3836',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_total': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#f0f0f0',
+            \                'guibg': '#504945',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_lineInfo': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#f0f0f0',
+            \                'guibg': '#3c3836',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_normalMode': {
+            \                'gui': 'bold',
+            \                'font': 'NONE',
+            \                'guifg': '#282828',
+            \                'guibg': '#1299AD',
+            \                'cterm': 'bold',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_inputMode': {
+            \                'gui': 'bold',
+            \                'font': 'NONE',
+            \                'guifg': '#282828',
+            \                'guibg': '#6EBB82',
+            \                'cterm': 'bold',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_fullPathMode': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#f0f0f0',
+            \                'guibg': '#504945',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_category': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#f0f0f0',
+            \                'guibg': '#504945',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_fuzzyMode': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#f0f0f0',
+            \                'guibg': '#504945',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_regexMode': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#f0f0f0',
+            \                'guibg': '#504945',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      'Lf_hl_popup_nameOnlyMode': {
+            \                'gui': 'NONE',
+            \                'font': 'NONE',
+            \                'guifg': '#a89984',
+            \                'guibg': '#504945',
+            \                'cterm': 'NONE',
+            \                'ctermfg': 'NONE',
+            \                'ctermbg': 'NONE'
+            \              },
+            \      }
+            \  }
+
 " Leaderf-popupp
 highlight def link Lf_hl_popup_window Pmenu
 highlight def link Lf_hl_popup_cwd    Lf_hl_popup_category
 highlight def link Lf_hl_help         Comment
 highlight def link Lf_hl_helpCmd      Identifier
-
-highlight def Lf_hl_popup_cursor       guifg=#14212b guibg=#ecebf0 gui=NONE
-highlight def Lf_hl_popup_inputText    guifg=#ecebf0 guibg=#434C5E gui=bold
-highlight def Lf_hl_popup_blank        guifg=NONE    guibg=#434C5E gui=NONE
-highlight def Lf_hl_popup_prompt       guifg=#5E81AC guibg=#65B0ED gui=bold
-highlight def Lf_hl_popup_lineInfo     guifg=#353129 guibg=#dce6da gui=bold
-highlight def Lf_hl_popup_total        guifg=#f2ebc7 guibg=#6e7476 gui=bold
-highlight def Lf_hl_popup_spin         guifg=#e6e666 guibg=NONE    gui=NONE
-highlight def Lf_hl_popup_normalMode   guifg=#333300 guibg=#99C27C gui=bold
-highlight def Lf_hl_popup_inputMode    guifg=#003333 guibg=#65B0ED gui=bold
-highlight def Lf_hl_popup_nameOnlyMode guifg=#14212b guibg=#5E81AC gui=bold
-highlight def Lf_hl_popup_fullPathMode guifg=#14212b guibg=#5E81AC gui=bold
-highlight def Lf_hl_popup_fuzzyMode    guifg=#14212b guibg=#5E81AC gui=bold
-highlight def Lf_hl_popup_regexMode    guifg=#14212b guibg=#e6e666 gui=bold
-highlight def Lf_hl_popup_category     guifg=#f2ebc7 guibg=#6e7476 gui=bold
-
-highlight def Lf_hl_match       guifg=#88C0D0 guibg=NONE    gui=bold
-highlight def Lf_hl_match0      guifg=#88C0D0 guibg=NONE    gui=bold
-highlight def Lf_hl_match1      guifg=#43b9f0 guibg=NONE    gui=bold
-highlight def Lf_hl_match2      guifg=#e6e666 guibg=NONE    gui=bold
-highlight def Lf_hl_match3      guifg=#3ff5d1 guibg=NONE    gui=bold
-highlight def Lf_hl_match4      guifg=#FF0000 guibg=NONE    gui=bold
-highlight def Lf_hl_matchRefine guifg=Magenta guibg=NONE    gui=bold
-highlight def Lf_hl_cursorline  guifg=#5E81AC guibg=#212026 gui=bold
-highlight def Lf_hl_selection   guifg=Black   guibg=#a5eb84 gui=NONE
 
 let g:Lf_ShortcutF = "<leader><enter>"
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
