@@ -295,7 +295,7 @@ let g:Lf_PopupPalette = {
             \                'gui': 'NONE',
             \                'font': 'NONE',
             \                'guifg': '#FA7218',
-            \                'guibg': 'NONE',
+            \                'guibg': '#0A0216',
             \                'cterm': 'NONE',
             \                'ctermfg': 'NONE',
             \                'ctermbg': 'NONE'
@@ -357,8 +357,8 @@ let g:Lf_PopupPalette = {
             \      'Lf_hl_popup_normalMode': {
             \                'gui': 'bold',
             \                'font': 'NONE',
-            \                'guifg': '#282828',
-            \                'guibg': '#1299AD',
+            \                'guibg': '#3C3836',
+            \                'guifg': '#1299AD',
             \                'cterm': 'bold',
             \                'ctermfg': 'NONE',
             \                'ctermbg': 'NONE'
@@ -366,8 +366,8 @@ let g:Lf_PopupPalette = {
             \      'Lf_hl_popup_inputMode': {
             \                'gui': 'bold',
             \                'font': 'NONE',
-            \                'guifg': '#282828',
-            \                'guibg': '#6EBB82',
+            \                'guibg': '#3C3836',
+            \                'guifg': '#6EBB82',
             \                'cterm': 'bold',
             \                'ctermfg': 'NONE',
             \                'ctermbg': 'NONE'
@@ -421,10 +421,14 @@ let g:Lf_PopupPalette = {
             \  }
 
 " Leaderf-popupp
-highlight def link Lf_hl_popup_window Pmenu
-highlight def link Lf_hl_popup_cwd    Lf_hl_popup_category
-highlight def link Lf_hl_help         Comment
-highlight def link Lf_hl_helpCmd      Identifier
+"highlight def link Lf_hl_popup_window Pmenu
+"highlight def link Lf_hl_popup_cwd    Lf_hl_popup_category
+"highlight def link Lf_hl_help         Comment
+"highlight def link Lf_hl_helpCmd      Identifier
+highlight CursorLine guibg=#23292D
+highlight CursorLineNr guibg=#23292D
+highlight NormalNC guibg=#616668
+highlight NormalFloat guibg=#0A0216
 
 let g:Lf_ShortcutF = "<leader><enter>"
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
