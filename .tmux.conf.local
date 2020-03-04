@@ -137,7 +137,8 @@ tmux_conf_theme_window_status_current_format='#I #W'
 # window activity status style
 tmux_conf_theme_window_status_activity_fg='default'
 tmux_conf_theme_window_status_activity_bg='default'
-tmux_conf_theme_window_status_activity_attr='underscore'
+# 去掉activity window status的下划线
+tmux_conf_theme_window_status_activity_attr='none'
 
 # window bell status style
 tmux_conf_theme_window_status_bell_fg='#ffff00'         # yellow
@@ -358,8 +359,9 @@ set -g mouse on
 
 set -g status-interval 2
 
-setw -g monitor-activity on  
-set -g visual-activity on 
+# disable alert
+setw -g monitor-activity on
+set -g visual-activity off
 setw -g window-status-format " (#I:#W#F) "  
 
 
