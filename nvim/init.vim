@@ -427,7 +427,7 @@ let g:Lf_PopupPalette = {
 "highlight def link Lf_hl_helpCmd      Identifier
 highlight CursorLine guibg=#23292D
 highlight CursorLineNr guibg=#23292D
-highlight NormalNC guibg=#616668
+highlight NormalNC guibg=#0A0216
 highlight NormalFloat guibg=#0A0216
 
 let g:Lf_ShortcutF = "<leader><enter>"
@@ -460,6 +460,8 @@ function! LightlineGitBlame() abort
   " return blame
   return winwidth(0) > 10 ? blame : ''
 endfunction
+
+noremap <leader>gb :Gblame<CR>
 
 " explorer
 let g:coc_explorer_global_presets = {
