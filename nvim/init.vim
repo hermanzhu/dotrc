@@ -497,7 +497,7 @@ let g:lightline = {
       \             [ 'gitbranch', 'filename', 'modified', 'method' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'blame', 'fileencoding', 'filetype' ] ]
+      \              [ 'fileencoding', 'filetype' ] ]
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' },
