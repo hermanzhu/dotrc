@@ -71,7 +71,6 @@ set directory=~/.vim/swap//
 
 " define coc extensions
 let g:coc_global_extensions = [
-  \ 'coc-explorer',
   \ 'coc-ultisnips',
   \ 'coc-git',
   \ 'coc-tag',
@@ -427,7 +426,7 @@ let g:Lf_PopupPalette = {
 "highlight def link Lf_hl_helpCmd      Identifier
 highlight CursorLine guibg=#23292D
 highlight CursorLineNr guibg=#23292D
-highlight NormalNC guibg=#0A0216
+"highlight NormalNC guibg=#0A0216
 highlight NormalFloat guibg=#0A0216
 
 let g:Lf_ShortcutF = "<leader><enter>"
