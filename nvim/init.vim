@@ -2,6 +2,10 @@
 " curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " npm i -g neovim typescript
 
+" mac 加速光标移动速度
+" defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+" defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
@@ -427,7 +431,7 @@ let g:Lf_PopupPalette = {
 highlight CursorLine guibg=#23292D
 highlight CursorLineNr guibg=#23292D
 "highlight NormalNC guibg=#0A0216
-highlight NormalFloat guibg=#0A0216
+highlight NormalFloat guibg=#002B36
 
 let g:Lf_ShortcutF = "<leader><enter>"
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
