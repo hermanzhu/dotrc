@@ -57,8 +57,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-" show relative line number default.
-set number relativenumber
+" do not show relative line number default
+" set number relativenumber
 
 " easier window navigation
 nmap <C-h> <C-w>h
