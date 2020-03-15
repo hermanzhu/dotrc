@@ -77,6 +77,7 @@ set directory=~/.vim/swap//
 let g:coc_global_extensions = [
   \ 'coc-ultisnips',
   \ 'coc-git',
+  \ 'coc-floaterm',
   \ 'coc-tag',
   \ 'coc-phpls',
   \ 'coc-python',
@@ -113,6 +114,9 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
 Plug 'kristijanhusak/defx-git'
 
+" floaterm
+Plug 'voldikss/vim-floaterm'
+
 " icon
 Plug 'ryanoasis/vim-devicons'
 
@@ -129,6 +133,9 @@ Plug 'jwalton512/vim-blade'
 " typescript jsx syntax
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -147,14 +154,15 @@ let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_underline = 1
 
-set guifont=Jetbrains\ Mono:h15
-
 " line number
 highlight! link FoldColumn Normal     " Make it the background colour
 nmap <leader>nn :set norelativenumber\|set nonumber<CR>
 nmap <leader>sn :set number relativenumber<CR>
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 highlight SignColumn guibg=#1D1F21
+
+" tsx jsx
+let g:vim_jsx_pretty_colorful_config = 1
 
 " coc
 " Use tab for trigger completion with characters ahead and navigate.
@@ -279,7 +287,7 @@ let g:Lf_IgnoreCurrentBufferName = 1
 " popup mode
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
-let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "Jetbrains\ Mono" }
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "Victor\ Mono" }
 let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
 let g:Lf_PopupColorscheme = 'default'
 
@@ -435,6 +443,7 @@ highlight NormalFloat guibg=#002B36
 
 let g:Lf_ShortcutF = "<leader><enter>"
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+noremap <leader>db :<C-U><C-R>=printf("bdelete")<CR><CR>
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
