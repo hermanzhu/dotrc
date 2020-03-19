@@ -75,7 +75,7 @@ set directory=~/.vim/swap//
 
 " define coc extensions
 let g:coc_global_extensions = [
-  \ 'coc-ultisnips',
+  \ 'coc-snippets',
   \ 'coc-git',
   \ 'coc-floaterm',
   \ 'coc-tag',
@@ -97,7 +97,6 @@ call plug#begin()
 
 " color theme
 Plug 'hermanzhu/dotrc'
-Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 
 " git
@@ -113,9 +112,6 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
 Plug 'kristijanhusak/defx-git'
-
-" floaterm
-Plug 'voldikss/vim-floaterm'
 
 " icon
 Plug 'ryanoasis/vim-devicons'
@@ -135,7 +131,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
 
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
