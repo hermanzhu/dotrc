@@ -13,6 +13,16 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" performance
+let loaded_matchparen=1 " Don't load matchit.vim (paren/bracket matching)
+set noshowmatch         " Don't match parentheses/brackets
+set nocursorline        " Don't paint cursor line
+set nocursorcolumn      " Don't paint cursor column
+set ttyfast
+set lazyredraw          " Wait to redraw
+set scrolljump=8        " Scroll 8 lines at a time at bottom/top
+let html_no_rendering=1 " Don't render italic, bold, links in HTML
+
 filetype on "File type
 filetype plugin on
 set mouse=a  " Enable mouse
