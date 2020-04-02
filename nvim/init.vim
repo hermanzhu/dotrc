@@ -77,7 +77,28 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " Load the current buffer in Chrome
-nmap ,c :!open -a Microsoft\ Edge<cr>
+nmap ,c :!open -a Google\ Chrome<cr>
+
+" start --------------------- emacs move mode when insert
+" insert mode
+imap <C-b> <Left>
+imap <C-f> <Right>
+imap <C-a> <C-o>:call <SID>home()<CR>
+imap <C-e> <End>
+imap <C-d> <Del>
+imap <C-h> <BS>
+
+" command line mode
+cmap <C-p> <Up>
+cmap <C-n> <Down>
+cmap <C-b> <Left>
+cmap <C-f> <Right>
+cmap <C-a> <Home>
+cmap <C-e> <End>
+cnoremap <C-d> <Del>
+cnoremap <C-h> <BS>
+" end ---------------------- emacs move mode when insert
+
 
 " Swap files out of the project root
 set backupdir=~/.vim/backup//
