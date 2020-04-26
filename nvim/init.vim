@@ -6,8 +6,8 @@
 " defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 " defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+" let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/anaconda3/bin/python'
 
 set tabstop=4
 set shiftwidth=4
@@ -106,6 +106,7 @@ set directory=~/.vim/swap//
 
 " define coc extensions
 let g:coc_global_extensions = [
+  \ 'coc-explorer',
   \ 'coc-snippets',
   \ 'coc-git',
   \ 'coc-floaterm',
