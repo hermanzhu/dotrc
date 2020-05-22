@@ -112,12 +112,14 @@ let g:coc_global_extensions = [
   \ 'coc-floaterm',
   \ 'coc-tag',
   \ 'coc-phpls',
+  \ 'coc-go',
   \ 'coc-python',
   \ 'coc-json',
   \ 'coc-tsserver',
   \ 'coc-tslint-plugin',
   \ 'coc-json',
   \ 'coc-emmet',
+  \ 'coc-pairs',
   \ 'coc-html',
   \ 'coc-css',
   \ 'coc-yaml',
@@ -175,6 +177,9 @@ let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
 let g:nord_underline = 1
+
+" delete buff
+noremap <leader>db :<C-U><C-R>=printf("bdelete")<CR><CR>
 
 " line number
 highlight! link FoldColumn Normal     " Make it the background colour
@@ -465,7 +470,6 @@ highlight NormalFloat guibg=#002B36
 
 let g:Lf_ShortcutF = "<leader><enter>"
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
-noremap <leader>db :<C-U><C-R>=printf("bdelete")<CR><CR>
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>

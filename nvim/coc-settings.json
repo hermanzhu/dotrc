@@ -1,4 +1,6 @@
 {
+    "languageserver": {
+    },
     "suggest.detailMaxLength": 50,
     "suggest.maxPreviewWidth": 50,
     "suggest.maxCompleteItemCount": 10,
