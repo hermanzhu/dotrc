@@ -1,9 +1,14 @@
 {
     "languageserver": {
     },
-    "suggest.detailMaxLength": 50,
-    "suggest.maxPreviewWidth": 50,
-    "suggest.maxCompleteItemCount": 10,
+    "suggest.detailMaxLength": 60,
+    "suggest.maxPreviewWidth": 60,
+    "suggest.maxCompleteItemCount": 12,
+
+    // python
+    "python.jediEnabled": false,
+    "python.condaPath": "/usr/local/anaconda3/bin",
+
     // intelephense
     "intelephense.stubs": [
         "apache",
