@@ -5,6 +5,8 @@
     "suggest.maxPreviewWidth": 60,
     "suggest.maxCompleteItemCount": 12,
 
+    "coc.preferences.formatOnSaveFiletypes": ["go"],
+
     // python
     "python.jediEnabled": false,
     "python.condaPath": "/usr/local/anaconda3/bin",

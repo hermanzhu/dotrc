@@ -89,8 +89,8 @@ imap <C-d> <Del>
 imap <C-h> <BS>
 
 " command line mode
-cmap <C-p> <Up>
-cmap <C-n> <Down>
+"cmap <C-p> <Up>
+"cmap <C-n> <Down>
 cmap <C-b> <Left>
 cmap <C-f> <Right>
 cmap <C-a> <Home>
@@ -138,6 +138,9 @@ Plug 'tpope/vim-fugitive'
 
 " easymotion
 Plug 'easymotion/vim-easymotion'
+
+" multi cursors
+Plug 'terryma/vim-multiple-cursors'
 
 " leaderf
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
