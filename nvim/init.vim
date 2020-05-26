@@ -111,6 +111,7 @@ let g:coc_global_extensions = [
   \ 'coc-git',
   \ 'coc-floaterm',
   \ 'coc-tag',
+  \ 'coc-go',
   \ 'coc-phpls',
   \ 'coc-go',
   \ 'coc-python',
@@ -160,9 +161,9 @@ Plug 'jwalton512/vim-blade'
 
 " typescript jsx syntax
 Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'maxmellon/vim-jsx-pretty'
-"Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

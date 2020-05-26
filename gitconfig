@@ -138,3 +138,7 @@
     pager = less -R
 [help]
     autocorrect = 1 #fucking magic!
+[url "ssh://git@git.neox-inc.com/"]
+	insteadOf = https://git.neox-inc.com/
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
