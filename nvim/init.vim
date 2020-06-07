@@ -13,6 +13,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" fzf
+set  runtimepath+=/usr/local/opt/fzf
+
 " performance
 let loaded_matchparen=1 " Don't load matchit.vim (paren/bracket matching)
 set noshowmatch         " Don't match parentheses/brackets
@@ -143,8 +146,8 @@ Plug 'easymotion/vim-easymotion'
 " multi cursors
 Plug 'terryma/vim-multiple-cursors'
 
-" leaderf
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+" fzf
+Plug 'yuki-ycino/fzf-preview.vim'
 
 " icon
 Plug 'ryanoasis/vim-devicons'
@@ -246,10 +249,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -309,191 +308,6 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " end coc
 "
-" leaderf
-" don't show the help in normal mode
-let g:Lf_HideHelp = 1
-let g:Lf_UseCache = 0
-let g:Lf_UseVersionControlTool = 0
-let g:Lf_IgnoreCurrentBufferName = 1
-" popup mode
-let g:Lf_WindowPosition = 'popup'
-let g:Lf_PreviewInPopup = 1
-let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "Victor\ Mono" }
-let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
-let g:Lf_PopupColorscheme = 'default'
-
-let g:Lf_PopupPalette = {
-            \  'dark': {
-            \      'Lf_hl_popup_window': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#ebdbb2',
-            \                'guibg': '#23292D',
-            \                'cterm': 'NONE',
-            \                'ctermfg': '255',
-            \                'ctermbg': '237'
-            \              },
-            \      'Lf_hl_cursorline': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#FA7218',
-            \                'guibg': '#0A0216',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_match': {
-            \                'gui': 'bold',
-            \                'font': 'NONE',
-            \                'guifg': '#1CD814',
-            \                'guibg': 'NONE',
-            \                'cterm': 'bold',
-            \                'ctermfg': '14',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_inputText': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#ebdbb2',
-            \                'guibg': '#32302f',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_blank': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': 'NONE',
-            \                'guibg': '#3c3836',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': '239'
-            \              },
-            \      'Lf_hl_popup_cwd': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#a89984',
-            \                'guibg': '#3c3836',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_total': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#f0f0f0',
-            \                'guibg': '#504945',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_lineInfo': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#f0f0f0',
-            \                'guibg': '#3c3836',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_normalMode': {
-            \                'gui': 'bold',
-            \                'font': 'NONE',
-            \                'guibg': '#3C3836',
-            \                'guifg': '#1299AD',
-            \                'cterm': 'bold',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_inputMode': {
-            \                'gui': 'bold',
-            \                'font': 'NONE',
-            \                'guibg': '#3C3836',
-            \                'guifg': '#6EBB82',
-            \                'cterm': 'bold',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_fullPathMode': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#f0f0f0',
-            \                'guibg': '#504945',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_category': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#f0f0f0',
-            \                'guibg': '#504945',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_fuzzyMode': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#f0f0f0',
-            \                'guibg': '#504945',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_regexMode': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#f0f0f0',
-            \                'guibg': '#504945',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      'Lf_hl_popup_nameOnlyMode': {
-            \                'gui': 'NONE',
-            \                'font': 'NONE',
-            \                'guifg': '#a89984',
-            \                'guibg': '#504945',
-            \                'cterm': 'NONE',
-            \                'ctermfg': 'NONE',
-            \                'ctermbg': 'NONE'
-            \              },
-            \      }
-            \  }
-
-" Leaderf-popupp
-"highlight def link Lf_hl_popup_window Pmenu
-"highlight def link Lf_hl_popup_cwd    Lf_hl_popup_category
-"highlight def link Lf_hl_help         Comment
-"highlight def link Lf_hl_helpCmd      Identifier
-highlight CursorLine guibg=#23292D
-highlight CursorLineNr guibg=#23292D
-"highlight NormalNC guibg=#0A0216
-highlight NormalFloat guibg=#002B36
-
-let g:Lf_ShortcutF = "<leader><enter>"
-noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
-noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
-noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
-noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
-noremap <leader>ff :<C-U><C-R>=printf("Leaderf function %s", "")<CR><CR>
-
-noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
-noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
-" search visually selected text literally
-xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
-noremap go :<C-U>Leaderf! rg --recall<CR>
-
-" should use `Leaderf gtags --update` first
-let g:Lf_GtagsAutoGenerate = 1
-let g:Lf_Gtagslabel = 'native-pygments'
-noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
-noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
-noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
-" end leaderf
 highlight clear SignColumn
 " lightline
 " git blame
@@ -560,3 +374,111 @@ let s:palette.inactive.middle = s:palette.normal.middle
 let s:palette.tabline.middle = s:palette.normal.middle
 call insert(s:palette.normal.right, s:palette.normal.left[1], 0)
 " lightline end
+"
+" fzf
+"
+" Add fzf quit mapping
+let g:fzf_preview_quit_map = 1
+
+" Use floating window (for neovim)
+let g:fzf_preview_use_floating_window = 1
+
+" floating window size ratio
+let g:fzf_preview_floating_window_rate = 0.8
+
+" floating window winblend value
+let g:fzf_preview_floating_window_winblend = 15
+
+" Commands used for fzf preview.
+" The file name selected by fzf becomes {}
+" let g:fzf_preview_command = 'head -100 {-1}'                       " Not installed bat
+let g:fzf_preview_command = 'bat --color=always --style=grid {-1}' " Installed bat
+
+" g:fzf_binary_preview_command is executed if this command succeeds, and g:fzf_preview_command is executed if it fails
+let g:fzf_preview_if_binary_command = '[[ "$(file --mime {})" =~ binary ]]'
+
+" Commands used for binary file
+let g:fzf_binary_preview_command = 'echo "{} is a binary file"'
+
+" Commands used to get the file list from project
+" let g:fzf_preview_filelist_command = 'git ls-files --exclude-standard'               " Not Installed ripgrep
+let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"' " Installed ripgrep
+
+" Commands used to get the file list from git reposiroty
+let g:fzf_preview_git_files_command = 'git ls-files --exclude-standard'
+
+" Commands used to get the file list from current directory
+let g:fzf_preview_directory_files_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
+
+" Commands used to get the git status file list
+let g:fzf_preview_git_status_command = "git status --short --untracked-files=all | awk '{if (substr($0,2,1) !~ / /) print $2}'"
+
+" Commands used for git status preview.
+let g:fzf_preview_git_status_preview_command =  "[[ $(git diff -- {-1}) != \"\" ]] && git diff --color=always -- {-1} || " .
+\ "[[ $(git diff --cached -- {-1}) != \"\" ]] && git diff --cached --color=always -- {-1} || " .
+\ g:fzf_preview_command
+
+" Commands used for project grep
+let g:fzf_preview_grep_cmd = 'rg --line-number --no-heading'
+
+" Commands used for current file lines
+"let g:fzf_preview_lines_command = 'cat'
+let g:fzf_preview_lines_command = 'bat --color=always --style=grid --theme=ansi-dark --plain'
+
+" Commands used for preview of the grep result
+let g:fzf_preview_grep_preview_cmd = expand('<sfile>:h:h') . '/bin/preview_fzf_grep'
+
+" Cache directory for mru and mrw
+let g:fzf_preview_cache_directory = expand('~/.cache/vim/fzf_preview')
+
+" Keyboard shortcuts while fzf preview is active
+let g:fzf_preview_preview_key_bindings = 'ctrl-d:preview-page-down,ctrl-u:preview-page-up,?:toggle-preview'
+
+" Specify the color of fzf
+let g:fzf_preview_fzf_color_option = ''
+
+" Set the processors when selecting an element with fzf
+" Do not use with g:fzf_preview_*_key_map
+let g:fzf_preview_custom_default_processors = {}
+" For example, set split to ctrl-s
+" let g:fzf_preview_custom_default_processors = fzf_preview#resource_processor#get_default_processors()
+" call remove(g:fzf_preview_custom_default_processors, 'ctrl-x')
+" let g:fzf_preview_custom_default_processors['ctrl-s'] = function('fzf_preview#resource_processor#split')
+
+" Use as fzf preview-window option
+let g:fzf_preview_fzf_preview_window_option = ''
+" let g:fzf_preview_fzf_preview_window_option = 'up:30%'
+
+" Command to be executed after file list creation
+"let g:fzf_preview_filelist_postprocess_command = ''
+" let g:fzf_preview_filelist_postprocess_command = 'xargs -d "\n" ls -U --color'      " Use dircolors
+" let g:fzf_preview_filelist_postprocess_command = 'xargs -d "\n" exa --color=always' " Use exa
+" on Mac
+let g:fzf_preview_filelist_postprocess_command = 'gxargs -d "\n" exa --color=always' "use exa
+
+" Use vim-devicons
+let g:fzf_preview_use_dev_icons = 1
+
+" devicons character width
+let g:fzf_preview_dev_icon_prefix_length = 5
+"
+"
+nmap <Leader>f [fzf-p]
+xmap <Leader>f [fzf-p]
+
+nnoremap <leader><enter>       :<C-u>FzfPreviewProjectFiles<CR>
+nnoremap <silent> [fzf-p]p     :<C-u>FzfPreviewFromResources project_mru git<CR>
+nnoremap <silent> [fzf-p]gs    :<C-u>FzfPreviewGitStatus<CR>
+nnoremap <silent> [fzf-p]b     :<C-u>FzfPreviewBuffers<CR>
+nnoremap <silent> [fzf-p]B     :<C-u>FzfPreviewAllBuffers<CR>
+nnoremap <silent> [fzf-p]o     :<C-u>FzfPreviewFromResources buffer project_mru<CR>
+nnoremap <silent> [fzf-p]<C-o> :<C-u>FzfPreviewJumps<CR>
+nnoremap <silent> [fzf-p]g;    :<C-u>FzfPreviewChanges<CR>
+nnoremap <silent> [fzf-p]/     :<C-u>FzfPreviewLines -add-fzf-arg=--no-sort -add-fzf-arg=--query="'"<CR>
+nnoremap <silent> [fzf-p]*     :<C-u>FzfPreviewLines -add-fzf-arg=--no-sort -add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+nnoremap          [fzf-p]gr    :<C-u>FzfPreviewProjectGrep<Space>
+xnoremap          [fzf-p]gr    "sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+nnoremap <silent> [fzf-p]t     :<C-u>FzfPreviewBufferTags<CR>
+nnoremap <silent> [fzf-p]q     :<C-u>FzfPreviewQuickFix<CR>
+nnoremap <silent> [fzf-p]l     :<C-u>FzfPreviewLocationList<CR>
+" fzf end
