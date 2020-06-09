@@ -10,8 +10,11 @@
 set-option -g default-shell /usr/local/bin/zsh
 
 # True color
-#set -g default-terminal "screen-256color"
-set -g terminal-overrides ",xterm-256color:Tc"
+set -g default-terminal "screen-256color"
+#set -g terminal-overrides ",xterm-256color:Tc"
+set -g terminal-overrides "xterm:colors=256:\
+setaf=\e[%?%p1%{8}%<%t3%p1%d%e%p1%{16}%<%t9%p1%{8}%-%d%e38;5;%p1%d%;m:\
+setab=\e[%?%p1%{8}%<%t4%p1%d%e%p1%{16}%<%t10%p1%{8}%-%d%e48;5;%p1%d%;m"
 
 # if you're running tmux within iTerm2
 #   - and tmux is 1.9 or 1.9a
@@ -188,7 +191,7 @@ tmux_conf_theme_right_separator_sub='|'
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left='💻 #{loadavg}#{?battery_status, #{battery_status},}#{?battery_percentage, #{battery_percentage},}'
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}%R %b-%d | #(curl wttr.in/Shanghai?format=3) | #{hostname} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}%R %b-%d | #(curl wttr.in/Shanghai?format=2) | #{hostname} '
 
 # powerline
 tmux_conf_theme_left_separator_main='\uE0B0'

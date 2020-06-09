@@ -460,7 +460,7 @@ let g:fzf_preview_filelist_postprocess_command = 'gxargs -d "\n" exa --color=alw
 let g:fzf_preview_use_dev_icons = 1
 
 " devicons character width
-let g:fzf_preview_dev_icon_prefix_length = 5
+let g:fzf_preview_dev_icon_prefix_length = 3
 "
 "
 nmap <Leader>f [fzf-p]
