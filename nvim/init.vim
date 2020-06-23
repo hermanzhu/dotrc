@@ -174,6 +174,9 @@ Plug 'dart-lang/dart-vim-plugin'
 " typescript
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 
+" toml
+Plug 'cespare/vim-toml'
+
 call plug#end()
 
 colorscheme ThemerVim
