@@ -142,3 +142,6 @@
 	insteadOf = https://git.neox-inc.com/
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+[pull]
+	reeebase = false
+	rebase = false
