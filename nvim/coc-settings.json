@@ -1,4 +1,10 @@
 {
+    "diagnostic.errorSign": "✖",
+    "diagnostic.warningSign": "⚠",
+    "diagnostic.infoSign": "ℹ",
+    "diagnostic.hintSign": "➤",
+    "diagnostic.checkCurrentLine": true,
+    "suggest.floatEnable": false,
     "languageserver": {
     },
     "suggest.detailMaxLength": 60,
