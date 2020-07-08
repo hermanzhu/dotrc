@@ -148,6 +148,9 @@ Plug 'terryma/vim-multiple-cursors'
 " leaderf
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
+" tcomment
+Plug 'tomtom/tcomment_vim'
+
 " icon
 Plug 'ryanoasis/vim-devicons'
 
