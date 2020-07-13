@@ -17,6 +17,9 @@
     "python.jediEnabled": false,
     "python.condaPath": "/usr/local/anaconda3/bin",
 
+    // golang
+    "go.disable": {"workspaceFolders": false},
+
     // intelephense
     "intelephense.stubs": [
         "apache",
