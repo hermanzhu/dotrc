@@ -36,6 +36,7 @@
     co = checkout
     br = branch
     ci = commit
+    ca = commit -a
     st = status
 
     #BETTER VERSIONS OF BASIC COMMANDS
@@ -136,6 +137,7 @@
     whitespace = nowarn
 [core]
     pager = less -R
+    editor = nvim
 [help]
     autocorrect = 1 #fucking magic!
 [url "ssh://git@git.neox-inc.com/"]
