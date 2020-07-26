@@ -20,6 +20,9 @@
     // golang
     "go.disable": {"workspaceFolders": false},
 
+    // c sharp
+    "coc.source.OmniSharp.enable": true,
+
     // intelephense
     "intelephense.stubs": [
         "apache",
@@ -28,7 +31,6 @@
         "calendar",
         "com_dotnet",
         "Core",
-        "csprng",
         "ctype",
         "curl",
         "date",
@@ -54,9 +56,7 @@
         "mssql",
         "mysqli",
         "oci8",
-        "odcb",
         "openssl",
-        "password",
         "pcntl",
         "pcre",
         "PDO",

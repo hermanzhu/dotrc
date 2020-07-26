@@ -113,6 +113,7 @@ let g:coc_global_extensions = [
   \ 'coc-tag',
   \ 'coc-phpls',
   \ 'coc-go',
+  \ 'coc-omnisharp',
   \ 'coc-python',
   \ 'coc-json',
   \ 'coc-tsserver',
