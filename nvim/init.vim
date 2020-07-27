@@ -67,8 +67,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-" do not show relative line number default
-" set number relativenumber
+" show relative line number default
+set number relativenumber
 
 " easier window navigation
 nmap <C-h> <C-w>h
@@ -161,6 +161,12 @@ Plug 'tpope/vim-surround'
 
 " relative line numbers
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
+" easy align
+Plug 'junegunn/vim-easy-align'
+
+" search & replace
+Plug 'brooth/far.vim'
 
 " laravel blade syntax
 Plug 'jwalton512/vim-blade'
