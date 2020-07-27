@@ -596,3 +596,22 @@ let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_diagnostic_errors = 1
 let g:go_highlight_diagnostic_warnings = 1
+
+" far
+set regexpengine=1        " use old regexp engine
+set ignorecase smartcase  " ignore case only when the pattern contains no capital letters
+
+" shortcut for far.vim find
+nnoremap <silent> /  :Farf<cr>
+vnoremap <silent> /  :Farf<cr>
+
+" shortcut for far.vim replace
+nnoremap <silent> \  :Farr<cr>
+vnoremap <silent> \  :Farr<cr>
+
+" easy align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
