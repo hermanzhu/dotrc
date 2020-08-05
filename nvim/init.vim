@@ -144,7 +144,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 
 " multi cursors
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors' deprecated
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " leaderf
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
