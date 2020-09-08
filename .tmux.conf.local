@@ -79,23 +79,23 @@ tmux_conf_theme_pane_indicator='#00afff'                # light blue
 tmux_conf_theme_pane_active_indicator='#00afff'         # light blue
 
 # status line style
-tmux_conf_theme_message_fg='#23292D'                    # black
+tmux_conf_theme_message_fg='#1F2430'                    # black
 tmux_conf_theme_message_bg='#ffff00'                    # yellow
 tmux_conf_theme_message_attr='bold'
 
 # status line command style (<prefix> : Escape)
 tmux_conf_theme_message_command_fg='#ffff00'            # yellow
-tmux_conf_theme_message_command_bg='#23292D'            # black
+tmux_conf_theme_message_command_bg='#1F2430'            # black
 tmux_conf_theme_message_command_attr='bold'
 
 # window modes style
-tmux_conf_theme_mode_fg='#23292D'                       # black
+tmux_conf_theme_mode_fg='#1F2430'                       # black
 tmux_conf_theme_mode_bg='#ffff00'                       # yellow
 tmux_conf_theme_mode_attr='bold'
 
 # status line style
 tmux_conf_theme_status_fg='#8a8a8a'                     # light gray
-tmux_conf_theme_status_bg='#23292D'                     # dark gray
+tmux_conf_theme_status_bg='#1F2430'                     # dark gray
 tmux_conf_theme_status_attr='none'
 
 # terminal title
@@ -117,7 +117,7 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_fg='#8a8a8a'              # light gray
-tmux_conf_theme_window_status_bg='#23292D'              # dark gray
+tmux_conf_theme_window_status_bg='#1F2430'              # dark gray
 tmux_conf_theme_window_status_attr='none'
 tmux_conf_theme_window_status_format=' #I #W '
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
@@ -131,7 +131,7 @@ tmux_conf_theme_window_status_format=' #I #W '
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg='#23292D'      # black
+tmux_conf_theme_window_status_current_fg='#1F2430'      # black
 tmux_conf_theme_window_status_current_bg='#1299AD'      # light blue
 tmux_conf_theme_window_status_current_attr='bold'
 tmux_conf_theme_window_status_current_format='#I #W'
@@ -198,13 +198,13 @@ tmux_conf_theme_right_separator_main='\uE0B2'
 tmux_conf_theme_right_separator_sub='\uE0B3'
 
 # status left style
-tmux_conf_theme_status_left_fg='#23292D,#e4e4e4,#e4e4e4'  # black, white , white
+tmux_conf_theme_status_left_fg='#1F2430,#e4e4e4,#e4e4e4'  # black, white , white
 tmux_conf_theme_status_left_bg='#6EBB82,#F79532,#00afff'  # yellow, pink, white blue
 tmux_conf_theme_status_left_attr='bold,none,none'
 
 # status right style
-tmux_conf_theme_status_right_fg='#f0f0f0,#e4e4e4,#23292D' # light gray, white, black
-tmux_conf_theme_status_right_bg='#23292D,#5073B8,#e4e4e4' # dark gray, red, white
+tmux_conf_theme_status_right_fg='#f0f0f0,#e4e4e4,#1F2430' # light gray, white, black
+tmux_conf_theme_status_right_bg='#1F2430,#5073B8,#e4e4e4' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,bold'
 
 # pairing indicator
@@ -378,23 +378,23 @@ set -g status-bg "#0f0f0f"
 #set -g status-left-fg "#bfc0c2"
 set -g status-left-style bg=#42474b,fg=#bfc0c2
 #set -g status-left-length 40
-#set -g status-left "#[fg=#23292d,bg=#5073b8,bold] #S #[fg=#5073b8,bg=#a0a2a4,nobold]#[fg=#42474b,bg=#a0a2a4] #(whoami) #[fg=#a0a2a4,bg=#616668]#[fg=#a0a2a4,bg=#616668] #I:#P #[fg=#616668,bg=#42474b,nobold]"
+#set -g status-left "#[fg=#1F2430,bg=#5073b8,bold] #S #[fg=#5073b8,bg=#a0a2a4,nobold]#[fg=#42474b,bg=#a0a2a4] #(whoami) #[fg=#a0a2a4,bg=#616668]#[fg=#a0a2a4,bg=#616668] #I:#P #[fg=#616668,bg=#42474b,nobold]"
 
 # Right side of status bar
 #set -g status-right-bg "#42474b"
 #set -g status-right-fg "#bfc0c2"
 #set -g status-right-style bg=#42474b,fg=#bfc0c2
 #set -g status-right-length 150
-#set -g status-right "#[fg=#616668,bg=#42474b]#[fg=#a0a2a4,bg=#616668] %H:%M:%S #[fg=#a0a2a4,bg=#616668]#[fg=#42474b,bg=#a0a2a4] %d-%b-%y #[fg=#dedfdf,bg=#a0a2a4]#[fg=#23292d,bg=#dedfdf,bold] #H "
+#set -g status-right "#[fg=#616668,bg=#42474b]#[fg=#a0a2a4,bg=#616668] %H:%M:%S #[fg=#a0a2a4,bg=#616668]#[fg=#42474b,bg=#a0a2a4] %d-%b-%y #[fg=#dedfdf,bg=#a0a2a4]#[fg=#1F2430,bg=#dedfdf,bold] #H "
 
 # Window status
 set -g window-status-format "#[fg=#fdfdfd]#[bg=#42474b] #I:#W#F "
-set -g window-status-current-format "#[fg=#a067ab,bg=#23292D] #I:#W#F "
+set -g window-status-current-format "#[fg=#a067ab,bg=#1F2430] #I:#W#F "
 
 # Current window status
 #set -g window-status-current-bg "#5073b8"
-#set -g window-status-current-fg "#23292d"
-set -g window-status-current-style bg=#5073b8,fg=#23292d
+#set -g window-status-current-fg "#1F2430"
+set -g window-status-current-style bg=#5073b8,fg=#1F2430
 
 # Window with activity status
 #set -g window-status-activity-bg "#a067ab"  # fg and bg are flipped here due to
@@ -428,12 +428,12 @@ set -g clock-mode-style 24
 # Message
 #set -g message-bg "#5073b8"
 #set -g message-fg black
-set -g message-style bg=#5073b8,fg=#23292D
+set -g message-style bg=#5073b8,fg=#1F2430
 
 # Command message
 #set -g message-command-bg "#42474b"
 #set -g message-command-fg black
-set -g message-command-style bg=#42474b,fg=#23292D
+set -g message-command-style bg=#42474b,fg=#1F2430
 
 # Mode
 #set -g mode-bg "#5073b8"

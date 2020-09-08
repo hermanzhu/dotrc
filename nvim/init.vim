@@ -133,6 +133,10 @@ call plug#begin()
 " color theme
 Plug 'hermanzhu/dotrc'
 Plug 'itchyny/lightline.vim'
+Plug 'ayu-theme/ayu-vim'
+
+" multi cursors
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " language solid
 Plug 'sheerun/vim-polyglot'
@@ -142,10 +146,6 @@ Plug 'tpope/vim-fugitive'
 
 " easymotion
 Plug 'easymotion/vim-easymotion'
-
-" multi cursors
-" Plug 'terryma/vim-multiple-cursors' deprecated
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " leaderf
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
@@ -159,6 +159,9 @@ Plug 'ryanoasis/vim-devicons'
 " close tags
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
+
+" color brackets
+Plug 'luochen1990/rainbow'
 
 " relative line numbers
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -192,7 +195,9 @@ Plug 'cespare/vim-toml'
 
 call plug#end()
 
-colorscheme ThemerVim
+let ayucolor="mirage"
+colorscheme ayu
+"colorscheme ThemerVim
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
@@ -344,7 +349,7 @@ let g:Lf_PopupPalette = {
             \                'gui': 'NONE',
             \                'font': 'NONE',
             \                'guifg': '#ebdbb2',
-            \                'guibg': '#23292D',
+            \                'guibg': '#1F2430',
             \                'cterm': 'NONE',
             \                'ctermfg': '255',
             \                'ctermbg': '237'
@@ -483,8 +488,8 @@ let g:Lf_PopupPalette = {
 "highlight def link Lf_hl_popup_cwd    Lf_hl_popup_category
 "highlight def link Lf_hl_help         Comment
 "highlight def link Lf_hl_helpCmd      Identifier
-highlight CursorLine guibg=#23292D
-highlight CursorLineNr guibg=#23292D
+highlight CursorLine guibg=#1F2430
+highlight CursorLineNr guibg=#1F2430
 "highlight NormalNC guibg=#0A0216
 highlight NormalFloat guibg=#002B36
 
@@ -616,3 +621,35 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" italic
+"
+let _Operator  = '[-&|+<>=*/!~]'    " A list of symbols that we don't want to immediately precede the operator
+let _Operator .= '\@<!'             " Negative look-behind (check that the preceding symbols aren't there)
+let _Operator .= '\%('              " Beginning of a list of possible operators
+let _Operator .=     '\('           " First option, the following symbols...
+let _Operator .=        '[-&|+<>=]'
+let _Operator .=     '\)'
+let _Operator .=     '\1\?'         " Followed by (optionally) the exact same symbol, so -, --, =, ==, &, && etc
+let _Operator .= '\|'               " Next option:
+let _Operator .=     '->'           " Pointer dereference operator
+let _Operator .= '\|'               " Next option:
+let _Operator .=     '[-+*/%&^|!]=' " One of the listed symbols followed by an =, e.g. +=, -=, &= etc
+let _Operator .= '\|'               " Next option:
+let _Operator .=     '[*?,!~%]'     " Some simple single character operators
+let _Operator .= '\|'               " Next option:
+let _Operator .=     '\('           " One of the shift characters:
+let _Operator .=         '[<>]'     
+let _Operator .=     '\)'
+let _Operator .=     '\2'           " Followed by another identical character, so << or >>...
+let _Operator .=     '='            " Followed by =, so <<= or >>=.
+let _Operator .= '\)'               " End of the long list of options
+let _Operator .= '[-&|+<>=*/!~]'    " The list of symbols that we don't want to follow
+let _Operator .= '\@!'              " Negative look-ahead (this and the \@<! prevent === etc from matching)
+
+hi Comment cterm=italic gui=italic
+hi Keyword cterm=italic gui=italic
+hi Type cterm=italic gui=italic
+hi htmlArg cterm=italic gui=italic
+hi _Operator cterm=italic gui=italic
+
