@@ -144,8 +144,9 @@ Plug 'sheerun/vim-polyglot'
 " git
 Plug 'tpope/vim-fugitive'
 
-" easymotion
+" easymotion abandon
 Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 
 " leaderf
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
@@ -621,6 +622,10 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" vim-sneak
+let g:sneak#label = 1
+let g:sneak#use_ic_scs = 1
 
 " italic
 "
