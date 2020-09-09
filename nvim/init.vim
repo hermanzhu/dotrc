@@ -133,7 +133,7 @@ call plug#begin()
 " color theme
 Plug 'hermanzhu/dotrc'
 Plug 'itchyny/lightline.vim'
-Plug 'ayu-theme/ayu-vim'
+Plug 'hermanzhu/ayu-vim'
 
 " multi cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
