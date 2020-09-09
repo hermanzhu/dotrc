@@ -403,7 +403,7 @@ let g:Lf_PopupPalette = {
             \                'gui': 'NONE',
             \                'font': 'NONE',
             \                'guifg': '#f0f0f0',
-            \                'guibg': '#504945',
+            \                'guibg': '#18222D',
             \                'cterm': 'NONE',
             \                'ctermfg': 'NONE',
             \                'ctermbg': 'NONE'
@@ -439,7 +439,7 @@ let g:Lf_PopupPalette = {
             \                'gui': 'NONE',
             \                'font': 'NONE',
             \                'guifg': '#f0f0f0',
-            \                'guibg': '#504945',
+            \                'guibg': '#18222D',
             \                'cterm': 'NONE',
             \                'ctermfg': 'NONE',
             \                'ctermbg': 'NONE'
@@ -448,7 +448,7 @@ let g:Lf_PopupPalette = {
             \                'gui': 'NONE',
             \                'font': 'NONE',
             \                'guifg': '#f0f0f0',
-            \                'guibg': '#504945',
+            \                'guibg': '#18222D',
             \                'cterm': 'NONE',
             \                'ctermfg': 'NONE',
             \                'ctermbg': 'NONE'
@@ -457,7 +457,7 @@ let g:Lf_PopupPalette = {
             \                'gui': 'NONE',
             \                'font': 'NONE',
             \                'guifg': '#f0f0f0',
-            \                'guibg': '#504945',
+            \                'guibg': '#18222D',
             \                'cterm': 'NONE',
             \                'ctermfg': 'NONE',
             \                'ctermbg': 'NONE'
@@ -466,7 +466,7 @@ let g:Lf_PopupPalette = {
             \                'gui': 'NONE',
             \                'font': 'NONE',
             \                'guifg': '#f0f0f0',
-            \                'guibg': '#504945',
+            \                'guibg': '#18222D',
             \                'cterm': 'NONE',
             \                'ctermfg': 'NONE',
             \                'ctermbg': 'NONE'
@@ -475,7 +475,7 @@ let g:Lf_PopupPalette = {
             \                'gui': 'NONE',
             \                'font': 'NONE',
             \                'guifg': '#a89984',
-            \                'guibg': '#504945',
+            \                'guibg': '#18222D',
             \                'cterm': 'NONE',
             \                'ctermfg': 'NONE',
             \                'ctermbg': 'NONE'
