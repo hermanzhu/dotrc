@@ -8,7 +8,8 @@
 # -- navigation ----------------------------------------------------------------
 
 # default shell
-set-option -g default-shell /usr/local/bin/zsh
+set-option -g default-shell /bin/zsh
+# set-option -g default-shell /usr/local/bin/zsh
 
 # True color
 #set -g default-terminal "screen-256color"

@@ -7,7 +7,8 @@
 " defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
 " let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/anaconda3/bin/python'
+let g:python3_host_prog = '/opt/homebrew/Caskroom/miniconda/base/bin/python'
+" let g:python3_host_prog = '/usr/local/anaconda3/bin/python'
 
 set tabstop=4
 set shiftwidth=4
