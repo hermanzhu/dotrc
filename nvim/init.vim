@@ -135,6 +135,9 @@ call plug#begin()
 Plug 'hermanzhu/dotrc'
 Plug 'itchyny/lightline.vim'
 Plug 'hermanzhu/ayu-vim'
+Plug 'nordtheme/vim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
 
 " multi cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -198,8 +201,10 @@ Plug 'cespare/vim-toml'
 call plug#end()
 
 let ayucolor="mirage"
-colorscheme ayu
+"colorscheme nord
 "colorscheme ThemerVim
+colorscheme catppuccin-mocha " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+"
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
